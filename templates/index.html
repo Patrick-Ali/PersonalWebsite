@@ -50,6 +50,16 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+<!--html2canvas
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+
+<!--jsPDF-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+    integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+    crossorigin="anonymous"></script>
+
+
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,13 +100,14 @@
 
     <div class="container-fluid pt-2">
         <div id="source-html" class="row">
-            <div class="col">
+            <div class="col" id="source-html-t">
                 <div id="introduction" class="col pt-5 multi-sel">
-                    <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne">
-                        <h2>Introduction</h2>
+                    <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne" id="One"
+                        onclick="changeArrow(this.id)">
+                        <h2>Introduction <span id="arr-One" style="font-weight: bold;">&#8679;</span></h2>
                     </a>
                     <!--<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>-->
-                    <div id="collapseOne" class="collapse" style="transition: all 0.6s ease 0s;">
+                    <div id="collapseOne" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
                             In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
                             excepteur fugiat incididunt aliquip non sit quis ullamco excepteur aliqua enim laboris. Et
@@ -120,10 +131,11 @@
                     </div>
                 </div>
                 <div id="education" class="col multi-sel">
-                    <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseOne">
-                        <h2>Education</h2>
+                    <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" id="Two"
+                        onclick="changeArrow(this.id)">
+                        <h2>Education <span id="arr-Two" style="font-weight: bold;">&#8679;</span> </h2>
                     </a>
-                    <div id="collapseTwo" class="collapse" style="transition: all 0.6s ease 0s;">
+                    <div id="collapseTwo" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
                             In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
                             excepteur fugiat incididunt aliquip non sit quis ullamco excepteur aliqua enim laboris. Et
@@ -147,10 +159,11 @@
                     </div>
                 </div>
                 <div id="skills" class="col multi-sel">
-                    <a data-toggle="collapse" data-target="#collapseThree" href="#collapseOne">
-                        <h2>Skills</h2>
+                    <a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" id="Three"
+                        onclick="changeArrow(this.id)">
+                        <h2>Skills <span id="arr-Three" style="font-weight: bold;">&#8679;</span></h2>
                     </a>
-                    <div id="collapseThree" class="collapse" style="transition: all 0.6s ease 0s;">
+                    <div id="collapseThree" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead class="thead-light">
@@ -175,10 +188,11 @@
                 </div>
 
                 <div id="work-exp" class="col multi-sel">
-                    <a data-toggle="collapse" data-target="#collapseFour" href="#collapseOne">
-                        <h2>Work Experience</h2>
+                    <a data-toggle="collapse" data-target="#collapseFour" href="#collapseFour" id="Four"
+                        onclick="changeArrow(this.id)">
+                        <h2>Work Experience <span id="arr-Four" style="font-weight: bold;">&#8679;</span></h2>
                     </a>
-                    <div id="collapseFour" class="collapse" style="transition: all 0.6s ease 0s;">
+                    <div id="collapseFour" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
                             In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
                             excepteur fugiat incididunt aliquip non sit quis ullamco excepteur aliqua enim laboris. Et
@@ -202,10 +216,11 @@
                     </div>
                 </div>
                 <div id="projects" class="col">
-                    <a data-toggle="collapse" data-target="#collapseFive" href="#collapseOne">
-                        <h2>Projects</h2>
+                    <a data-toggle="collapse" data-target="#collapseFive" href="#collapseFive" id="Five"
+                        onclick="changeArrow(this.id)">
+                        <h2>Projects <span id="arr-Five" style="font-weight: bold;">&#8679;</span></h2>
                     </a>
-                    <div id="collapseFive" class="collapse" style="transition: all 0.6s ease 0s;">
+                    <div id="collapseFive" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
                             In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
                             excepteur fugiat incididunt aliquip non sit quis ullamco excepteur aliqua enim laboris. Et
@@ -229,10 +244,11 @@
                     </div>
                 </div>
                 <div id="contact-info" class="col">
-                    <a data-toggle="collapse" data-target="#collapseSix" href="#collapseOne">
-                        <h2>Contact Information</h2>
+                    <a data-toggle="collapse" data-target="#collapseSix" href="#collapseSix" id="Six"
+                        onclick="changeArrow(this.id)">
+                        <h2>Contact Information <span id="arr-Six" style="font-weight: bold;">&#8679;</span></h2>
                     </a>
-                    <div id="collapseSix" class="collapse" style="transition: all 0.6s ease 0s;">
+                    <div id="collapseSix" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <!--Facebook-->
                         <a class="btn-floating btn-lg btn-fb" type="button" role="button" style="background-color: #3B5998;
                         display: inline-block;
@@ -307,20 +323,54 @@
         </div>
     </div>
     <div class="content-footer">
-        <button id="btn-export" onclick="exportHTML();">Export to
-            word doc</button>
+        <button type="button" id="btn-export" onclick="exportHTML();" class="btn btn-primary btn-block"
+            style="margin: 1em;">Export to
+            Microsoft Word Document</button>
+        <button type="button" id="btn-export-pdf" onclick="demoFromHTML();" class="btn btn-danger btn-block"
+            style="margin: 1em;">Export to
+            PDF</button>
+        <!--<button id="btn-export" onclick="exportHTML();">Export to
+            word doc</button>-->
     </div>
 </body>
 
 <script>
 
-    console.log("scrolling")
+    //https://stackoverflow.com/questions/9038625/detect-if-device-is-ios
+    function iOS() {
+
+        var iDevices = [
+            'iPad Simulator',
+            'iPhone Simulator',
+            'iPod Simulator',
+            //'iPad',
+            'iPhone',
+            'iPod'
+        ];
+
+        if (!!navigator.platform) {
+            while (iDevices.length) {
+                if (navigator.platform === iDevices.pop()) { return true; }
+            }
+        }
+
+        return false;
+    }
+
+    $(document).ready(function () {
+        //alert("document ready occurred!");
+        //console.log(iOS())
+        if (iOS()) {
+            $("#btn-export").remove();
+        }
+    });
+    //console.log("scrolling")
 
     //On Scroll remove class from sections
     $(window).scroll(function () {
-        console.log("Scrolled")
-        console.log($(window).height()); // New height
-        console.log($(window).width());
+        //console.log("Scrolled")
+        //console.log($(window).height()); // New height
+        //console.log($(window).width());
         $('.multi-sel').removeClass('test');
         $('#projects').removeClass('test');
     });
@@ -328,23 +378,23 @@
     //On clicking link add class to sections
     $('.navbar-nav>li>a').on('click', function () {
         $('.navbar-collapse').collapse('hide');
-        console.log(this)
+        //console.log(this)
         if ($(window).width() < 900) {
             if (this.id != "contact-info-a" && this.id != "projects-a") {
-                console.log(this.id)
+                //console.log(this.id)
                 setTimeout(function () {
                     $('.multi-sel').addClass('test');
                 }, 300);
             }
             else if (this.id == "projects-a") {
-                console.log("projects")
+                //console.log("projects")
                 setTimeout(function () {
-                    console.log("projects")
+                    //console.log("projects")
                     $('#projects').addClass('test');
                 }, 300);
             }
             else {
-                console.log("Click not recognised")
+                //console.log("Click not recognised")
             }
         }
     });
@@ -354,21 +404,94 @@
         $('.navbar-collapse').collapse('hide');
     });
 
+    function changeArrow(clicked_id) {
+        //console.log(clicked_id)
+        //console.log(document.getElementById("arr-"+clicked_id).textContent)
+        //console.log(document.getElementById("collapse"+clicked_id).className)
+        if (document.getElementById("collapse" + clicked_id).className == "collapse show") {
+            //console.log("It has collapsed")
+            document.getElementById("arr-" + clicked_id).innerHTML = "&#8681;"
+        }
+        else {
+            document.getElementById("arr-" + clicked_id).innerHTML = "&#8679;"
+        }
+    }
+
+    /*function exportPDF() {
+        const filename = 'Patrick-Ali-CV-T.pdf';
+        let pdf = new jsPDF('p', 'mm', 'a4');
+        var docText = document.getElementById("source-html").textContent;
+        console.log(docText);
+        pdf.text = ("docText", 1, 1);
+        pdf.save(filename);
+		/*html2canvas(document.querySelector('#source-html'), 
+								{scale: 4}
+						 ).then(canvas => {
+			let pdf = new jsPDF('p', 'mm', 'a4');
+			pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+			pdf.save(filename);
+        });
+        //console.log(document.getElementById("source-html").textContent)
+    }*/
+
     function exportHTML() {
         var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
             "xmlns:w='urn:schemas-microsoft-com:office:word' " +
             "xmlns='http://www.w3.org/TR/REC-html40'>" +
             "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
         var footer = "</body></html>";
-        var sourceHTML = header + document.getElementById("source-html").innerHTML + footer;
+        var sourceHTML = header + document.getElementById("source-html-t").innerHTML + footer;
 
         var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
         var fileDownload = document.createElement("a");
         document.body.appendChild(fileDownload);
         fileDownload.href = source;
-        fileDownload.download = 'document.doc';
+        fileDownload.download = 'Patrick-Ali-CV.doc';
         fileDownload.click();
         document.body.removeChild(fileDownload);
+    }
+</script>
+<script>
+    function demoFromHTML() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        // source can be HTML-formatted string, or a reference
+        // to an actual DOM element from which the text will be scraped.
+        source = $('#source-html-t')[0];
+        console.log(source)
+
+        // we support special element handlers. Register them with jQuery-style 
+        // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+        // There is no support for any other type of selectors 
+        // (class, of compound) at this time.
+        specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"
+                return true
+            }
+        };
+        margins = {
+            top: 20,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+        // all coords and widths are in jsPDF instance's declared units
+        // 'inches' in this case
+        pdf.fromHTML(
+            source, // HTML string or DOM elem ref.
+            margins.left, // x coord
+            margins.top, { // y coord
+            'width': margins.width, // max width of content on PDF
+            'elementHandlers': specialElementHandlers
+        },
+
+            function (dispose) {
+                // dispose: object with X, Y of the last line add to the PDF 
+                //          this allow the insertion of new lines after html
+                pdf.save('Patrick-Ali-CV.pdf');
+            }, margins
+        );
     }
 </script>
 
