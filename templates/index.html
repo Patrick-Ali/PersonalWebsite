@@ -27,6 +27,10 @@
             /*padding-bottom: 40px*/
         }
 
+        p{
+            text-align: justify;
+        }
+
         /* h1, h2, h3, h4 {
         voice-family: male;
         richness: 80;
@@ -104,7 +108,7 @@
                 <div id="introduction" class="col pt-5 multi-sel">
                     <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne" id="One"
                         onclick="changeArrow(this.id)">
-                        <h2>Introduction <span id="arr-One" style="font-weight: bold;">&#8679;</span></h2>
+                        <h2>Introduction <span id="arr-One" style="font-weight: bold;">&#9660;</span></h2>
                     </a>
                     <!--<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>-->
                     <div id="collapseOne" class="collapse show" style="transition: all 0.6s ease 0s;">
@@ -133,7 +137,7 @@
                 <div id="education" class="col multi-sel">
                     <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" id="Two"
                         onclick="changeArrow(this.id)">
-                        <h2>Education <span id="arr-Two" style="font-weight: bold;">&#8679;</span> </h2>
+                        <h2>Education <span id="arr-Two" style="font-weight: bold;">&#9660;</span> </h2>
                     </a>
                     <div id="collapseTwo" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
@@ -161,7 +165,7 @@
                 <div id="skills" class="col multi-sel">
                     <a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" id="Three"
                         onclick="changeArrow(this.id)">
-                        <h2>Skills <span id="arr-Three" style="font-weight: bold;">&#8679;</span></h2>
+                        <h2>Skills <span id="arr-Three" style="font-weight: bold;">&#9660;</span></h2>
                     </a>
                     <div id="collapseThree" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <div class="table-responsive">
@@ -190,7 +194,7 @@
                 <div id="work-exp" class="col multi-sel">
                     <a data-toggle="collapse" data-target="#collapseFour" href="#collapseFour" id="Four"
                         onclick="changeArrow(this.id)">
-                        <h2>Work Experience <span id="arr-Four" style="font-weight: bold;">&#8679;</span></h2>
+                        <h2>Work Experience <span id="arr-Four" style="font-weight: bold;">&#9660;</span></h2>
                     </a>
                     <div id="collapseFour" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
@@ -218,7 +222,7 @@
                 <div id="projects" class="col">
                     <a data-toggle="collapse" data-target="#collapseFive" href="#collapseFive" id="Five"
                         onclick="changeArrow(this.id)">
-                        <h2>Projects <span id="arr-Five" style="font-weight: bold;">&#8679;</span></h2>
+                        <h2>Projects <span id="arr-Five" style="font-weight: bold;">&#9660;</span></h2>
                     </a>
                     <div id="collapseFive" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
@@ -246,7 +250,7 @@
                 <div id="contact-info" class="col">
                     <a data-toggle="collapse" data-target="#collapseSix" href="#collapseSix" id="Six"
                         onclick="changeArrow(this.id)">
-                        <h2>Contact Information <span id="arr-Six" style="font-weight: bold;">&#8679;</span></h2>
+                        <h2>Contact Information <span id="arr-Six" style="font-weight: bold;">&#9660;</span></h2>
                     </a>
                     <div id="collapseSix" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <!--Facebook-->
@@ -318,7 +322,7 @@
                     </div>
                 </div>
 
-                <h2 style='display: none;'>Print CV</h2>
+                <h2 id="print-title" style='display: none;'>Print CV</h2>
             </div>
         </div>
     </div>
@@ -410,10 +414,10 @@
         //console.log(document.getElementById("collapse"+clicked_id).className)
         if (document.getElementById("collapse" + clicked_id).className == "collapse show") {
             //console.log("It has collapsed")
-            document.getElementById("arr-" + clicked_id).innerHTML = "&#8681;"
+            document.getElementById("arr-" + clicked_id).innerHTML = "&#9650;"//"&#8681;"
         }
         else {
-            document.getElementById("arr-" + clicked_id).innerHTML = "&#8679;"
+            document.getElementById("arr-" + clicked_id).innerHTML = "&#9660;"//"&#8679;"
         }
     }
 
@@ -459,6 +463,9 @@
         source = $('#source-html-t')[0];
         console.log(source)
 
+        $("span").remove();
+        $("#print-title").remove();
+        $("#contact-info").remove();
         // we support special element handlers. Register them with jQuery-style 
         // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
         // There is no support for any other type of selectors 
@@ -490,8 +497,11 @@
                 // dispose: object with X, Y of the last line add to the PDF 
                 //          this allow the insertion of new lines after html
                 pdf.save('Patrick-Ali-CV.pdf');
+                
             }, margins
+            
         );
+        location.reload();
     }
 </script>
 
