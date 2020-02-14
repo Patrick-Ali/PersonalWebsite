@@ -108,7 +108,8 @@
                 <div id="introduction" class="col pt-5 multi-sel">
                     <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne" id="One"
                         onclick="changeArrow(this.id)">
-                        <h2>Introduction <span id="arr-One" style="font-weight: bold;">&#9660;</span></h2>
+                        <h2 id="int-title">Introduction <span id="arr-One" style="font-weight: bold;">&#9660;</span>
+                        </h2>
                     </a>
                     <!--<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>-->
                     <div id="collapseOne" class="collapse show" style="transition: all 0.6s ease 0s;">
@@ -123,12 +124,12 @@
                 <div id="education" class="col multi-sel">
                     <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" id="Two"
                         onclick="changeArrow(this.id)">
-                        <h2>Education <span id="arr-Two" style="font-weight: bold;">&#9660;</span> </h2>
+                        <h2 id="ed-title">Education <span id="arr-Two" style="font-weight: bold;">&#9660;</span> </h2>
                     </a>
                     <div id="collapseTwo" class="collapse show" style="transition: all 0.6s ease 0s;">
-                        <p>2018 – 2019 <b>MSc Software Engineering</b>, Coventry University. (Distinction)</p>
-                        <p>2015 – 2018 <b>BSc (Hons) Computing</b>, Coventry University. (1st)</p>
-                        <p>2013 – 2015 <b>HND Computing and Systems Development</b>, Henley College, Coventry.
+                        <p>2018-2019 <b>MSc Software Engineering</b>, Coventry University. (Distinction)</p>
+                        <p>2015-2018 <b>BSc (Hons) Computing</b>, Coventry University. (1st)</p>
+                        <p>2013-2015 <b>HND Computing and Systems Development</b>, Henley College, Coventry.
                             (Distinction)</p>
                         <p>2011-2013 <b>3x A-Levels</b>, Cardinal Wiseman, Coventry.</p>
                         <p style="text-indent: 1em;">Business, History, and IT</p>
@@ -138,7 +139,7 @@
                 <div id="skills" class="col multi-sel">
                     <a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" id="Three"
                         onclick="changeArrow(this.id)">
-                        <h2>Skills <span id="arr-Three" style="font-weight: bold;">&#9660;</span></h2>
+                        <h2 id="skills-title">Skills <span id="arr-Three" style="font-weight: bold;">&#9660;</span></h2>
                     </a>
                     <div id="collapseThree" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <div class="table-responsive">
@@ -156,7 +157,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <h4>Soft Skills</h4>
+                        <h4 id="soft-title">Soft Skills</h4>
                         <dl>
                             <dt>Test</dt>
                             <dd>- Testing</dd>
@@ -167,7 +168,8 @@
                 <div id="work-exp" class="col multi-sel">
                     <a data-toggle="collapse" data-target="#collapseFour" href="#collapseFour" id="Four"
                         onclick="changeArrow(this.id)">
-                        <h2>Work Experience <span id="arr-Four" style="font-weight: bold;">&#9660;</span></h2>
+                        <h2 id="exp-title">Work Experience <span id="arr-Four" style="font-weight: bold;">&#9660;</span>
+                        </h2>
                     </a>
                     <div id="collapseFour" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
@@ -195,7 +197,7 @@
                 <div id="projects" class="col">
                     <a data-toggle="collapse" data-target="#collapseFive" href="#collapseFive" id="Five"
                         onclick="changeArrow(this.id)">
-                        <h2>Projects <span id="arr-Five" style="font-weight: bold;">&#9660;</span></h2>
+                        <h2 id="proj-title">Projects <span id="arr-Five" style="font-weight: bold;">&#9660;</span></h2>
                     </a>
                     <div id="collapseFive" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
@@ -324,7 +326,7 @@
             'iPad Simulator',
             'iPhone Simulator',
             'iPod Simulator',
-            //'iPad',
+            'iPad',
             'iPhone',
             'iPod'
         ];
@@ -354,6 +356,7 @@
         //console.log($(window).width());
         $('.multi-sel').removeClass('test');
         $('#projects').removeClass('test');
+        $('.navbar-collapse').collapse('hide');
     });
 
     //On clicking link add class to sections
@@ -384,6 +387,10 @@
     $(window).click(function () {
         $('.navbar-collapse').collapse('hide');
     });
+
+    $(window).on({ 'touchstart': function () { 
+        $('.navbar-collapse').collapse('hide');
+     } });
 
     function changeArrow(clicked_id) {
         //console.log(clicked_id)
@@ -421,8 +428,36 @@
             "xmlns='http://www.w3.org/TR/REC-html40'>" +
             "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
         var footer = "</body></html>";
+        var headStyle = { "color": "black", "padding": "0", "margin": "0", "margin-top": "2em", "padding-top": "2em", "font-family": "Arial, sans-serif", "text-decoration": "none", "font-size": "18px", "font-weight": "bold" };
+        var bodyStyle = { "color": "black", "font-family": "Arial, sans-serif", "padding": "0.5em", "margin": "0.5em", "font-size": "16px", "text-align": " justify" }
+        $("span").remove();
+        $("#print-title").remove();
+        $("#contact-info").remove();
+        $("#One").removeAttr("href");
+        $("#Two").removeAttr("href");
+        $("#Three").removeAttr("href");
+        $("#Four").removeAttr("href");
+        $("#Five").removeAttr("href");
+        $("#int-title").css(headStyle);
+        $("#ed-title").css(headStyle);
+        $("#skills-title").css(headStyle);
+        $("#exp-title").css(headStyle);
+        $("#proj-title").css(headStyle);
+        $("#soft-title").css(headStyle);
+        $("p").css(bodyStyle);
+        $("dd").css(bodyStyle);
+        bodyStyle["font-weight"] = "bold";
+        $("dt").css(bodyStyle);
+        bodyStyle["text-align"] = "center";
+        // bodyStyle.push(
+        //     {
+        //         key: "font-weight",
+        //         value: "bold"
+        //     }
+        // );
+        $("th").css(bodyStyle);
         var sourceHTML = header + document.getElementById("source-html-t").innerHTML + footer;
-
+        //console.log(sourceHTML)
         var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
         var fileDownload = document.createElement("a");
         document.body.appendChild(fileDownload);
@@ -430,6 +465,7 @@
         fileDownload.download = 'Patrick-Ali-CV.doc';
         fileDownload.click();
         document.body.removeChild(fileDownload);
+        location.reload();
     }
 </script>
 <script>
@@ -440,9 +476,33 @@
         source = $('#source-html-t')[0];
         console.log(source)
 
+        var headStyle = { "color": "black", "padding": "0", "margin": "0", "margin-top": "1em", "padding-top": "1em", "font-family": "Arial, sans-serif", "text-decoration": "none", "font-size": "18px", "font-weight": "bold" };
+        var bodyStyle = { "color": "black", "font-family": "Arial, sans-serif", "font-size": "16px", "text-align": " justify" }
         $("span").remove();
         $("#print-title").remove();
         $("#contact-info").remove();
+        $("#One").removeAttr("href");
+        $("#Two").removeAttr("href");
+        $("#Three").removeAttr("href");
+        $("#Four").removeAttr("href");
+        $("#Five").removeAttr("href");
+        $("#int-title").css(headStyle);
+        $("#ed-title").css(headStyle);
+        $("#skills-title").css(headStyle);
+        $("#exp-title").css(headStyle);
+        $("#proj-title").css(headStyle);
+        $("p").css(bodyStyle);
+        $("dd").css(bodyStyle);
+        bodyStyle["font-weight"] = "bold";
+        $("dt").css(bodyStyle);
+        bodyStyle["text-align"] = "center";
+        // bodyStyle.push(
+        //     {
+        //         key: "font-weight",
+        //         value: "bold"
+        //     }
+        // );
+        $("th").css(bodyStyle);
         // we support special element handlers. Register them with jQuery-style 
         // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
         // There is no support for any other type of selectors 
