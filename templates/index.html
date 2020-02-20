@@ -102,7 +102,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid pt-2">
+    <div id="page-body" class="container-fluid pt-2">
         <div id="source-html" class="row">
             <div class="col" id="source-html-t">
                 <div id="introduction" class="col pt-5 multi-sel">
@@ -388,7 +388,7 @@
         $('.navbar-collapse').collapse('hide');
     });
 
-    $(window).on({ 'touchstart': function () { 
+    $("page-body").on({ 'touchstart': function () { 
         $('.navbar-collapse').collapse('hide');
      } });
 
