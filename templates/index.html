@@ -31,6 +31,14 @@
             text-align: justify;
         }
 
+        .rem {
+            color: white;
+        }
+
+        .skill-head{
+            background-color: darkgray;
+        }
+
         /* h1, h2, h3, h4 {
         voice-family: male;
         richness: 80;
@@ -79,33 +87,33 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#introduction">Introduction</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#education">Education</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#work-exp">Work Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="projects-a" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="contact-info-a" href="#contact-info">Contact Information</a>
-                </li>
-            </ul>
+            <li class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#introduction">Introduction</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#work-exp">Work Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="projects-a" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-info-a" href="#contact-info">Contact Information</a>
+            </li>
+            </li>
         </div>
     </nav>
 
     <div id="page-body" class="container-fluid pt-2">
         <div id="source-html" class="row">
             <div class="col" id="source-html-t">
-                <div id="introduction" class="col pt-5 multi-sel">
+                <div id="introduction" class="col pt-5 mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne" id="One"
                         onclick="changeArrow(this.id)">
                         <h2 id="int-title">Introduction <span id="arr-One" style="font-weight: bold;">&#9660;</span>
@@ -121,7 +129,7 @@
                             passion for technology. </p>
                     </div>
                 </div>
-                <div id="education" class="col multi-sel">
+                <div id="education" class="col mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" id="Two"
                         onclick="changeArrow(this.id)">
                         <h2 id="ed-title">Education <span id="arr-Two" style="font-weight: bold;">&#9660;</span> </h2>
@@ -136,13 +144,13 @@
                         <p><b>6x GCSEs</b> (A-C) including English, Math, and Science</p>
                     </div>
                 </div>
-                <div id="skills" class="col multi-sel">
+                <div id="skills" class="col mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" id="Three"
                         onclick="changeArrow(this.id)">
                         <h2 id="skills-title">Skills <span id="arr-Three" style="font-weight: bold;">&#9660;</span></h2>
                     </a>
                     <div id="collapseThree" class="collapse show" style="transition: all 0.6s ease 0s;">
-                        <div class="table-responsive">
+                        <!--<div class="table-responsive">
                             <table class="table table-striped">
                                 <thead class="thead-light">
                                     <tr style="text-align: center;">
@@ -152,11 +160,122 @@
                                         <th class="w-25">Practices/Methods</th>
                                     </tr>
                                 </thead>
-                                <tr>
-
-                                </tr>
-                            </table>
+                                <tr>-->
+                        <!---->
+                        <div id="Skills-Head" class="row" style="background-color: darkgray;">
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Programming Languages, Databases, and Formats</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Operating Systems</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Programs, IDEs, and Version Control</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Frameworks</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Hardware</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Development Methodologies</b></p>
+                            </div>
                         </div>
+                        <div id="Skills" class="row">
+                            <div class="col-sm-2">
+                                
+                                <ul>
+                                <li>C++</li>
+                                <li>Python 3</li>
+                                <li>SQL (MySQL, Oracle Databases)</li>
+                                <li>Java</li>
+                                <li>Swift</li>
+                                <li>JQuery</li>
+                                <li>Visual Basic</li>
+                                <li>C#</li>
+                                <li>HTML 5</li>
+                                <li>CSS 3</li>
+                                <li>JavaScript</li>
+                                <li>Bootstrap 4</li>
+                                <li>XML</li>
+                                <li>JSON</li>
+                                <li>MongoDB</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2" style="background-color: lightgrey;">
+                                <!---->
+                                
+                                <ul>
+                                <li>macOS</li>
+                                <li>Windows XP-10</li>
+                                <li>iOS</li>
+                                <li>iPadOS</li>
+                                <li>watchOS</li>
+                                <li>Android</li>
+                                <li>Linux - Ubuntu, Raspbian</li>
+                                <li>Chromium</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <!---->
+                                
+                                <ul>
+                                <li>Microsoft Office including Word, Powerpoint, Excel</li>
+                                <li>Microsoft Project</li>
+                                <li>Microsoft Visio</li>
+                                <li>Microsoft Visual Studio</li>
+                                <li>Microsoft Visual Studio Code</li>
+                                <li>Netbeans</li>
+                                <li>Python IDLE</li>
+                                <li>Xcode</li>
+                                <li>GitHub</li>
+                                <li>GitLab</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2" style="background-color: lightgrey;">
+                                
+                                
+                                <ul>
+                                    <li>.NET</li>
+                                    <li>Node.js</li>
+                                    <li>Python Flask</li>
+                                    <li>UIKit</li>
+                                    <li>WatchKit</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2">
+                                
+                                
+                                <ul>
+                                <li>PC, build and maintain</li>
+                                <li>CISCO Switches and Routers</li>
+                            </ul>
+                            </div>
+
+                            <div class="col-sm-2" style="background-color: lightgrey;">
+                                
+                                
+                                <ul>
+                                <li>Agile</li>
+                                <li>SCRUM</li>
+                                <li>Test Driven Development</li>
+                                <li>Believe Driven Development</li>
+                                <li>Continues Development/ Delivery</li>
+                                <li>Kanban</li>
+                                <li>Version Control</li>
+                                <li>Iterative Development</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--</tr>
+                                </table>
+                        </div>-->
                         <h4 id="soft-title">Soft Skills</h4>
                         <dl>
                             <dt>Test</dt>
@@ -165,16 +284,16 @@
                     </div>
                 </div>
 
-                <div id="work-exp" class="col multi-sel">
+                <div id="work-exp" class="col mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseFour" href="#collapseFour" id="Four"
                         onclick="changeArrow(this.id)">
                         <h2 id="exp-title">Work Experience <span id="arr-Four" style="font-weight: bold;">&#9660;</span>
                         </h2>
                     </a>
                     <div id="collapseFour" class="collapse show" style="transition: all 0.6s ease 0s;">
-                        <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
+                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
                             In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
-                            excepteur fugiat incididunt aliquip non sit quis ullamco excepteur aliqua enim laboris. Et
+                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
                             quis
                             quis
                             voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
@@ -182,9 +301,9 @@
                             exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
                             eu
                             commodo nisi laboris est.</p>
-                        <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
+                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
                             In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
-                            excepteur fugiat incididunt aliquip non sit quis ullamco excepteur aliqua enim laboris. Et
+                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
                             quis
                             quis
                             voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
@@ -200,9 +319,9 @@
                         <h2 id="proj-title">Projects <span id="arr-Five" style="font-weight: bold;">&#9660;</span></h2>
                     </a>
                     <div id="collapseFive" class="collapse show" style="transition: all 0.6s ease 0s;">
-                        <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
+                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
                             In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
-                            excepteur fugiat incididunt aliquip non sit quis ullamco excepteur aliqua enim laboris. Et
+                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
                             quis
                             quis
                             voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
@@ -210,9 +329,9 @@
                             exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
                             eu
                             commodo nisi laboris est.</p>
-                        <p>Ex velit dolor ea nostrud non est in Lorem nulla exercitation non enim ipsum mollit.
+                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
                             In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
-                            excepteur fugiat incididunt aliquip non sit quis ullamco excepteur aliqua enim laboris. Et
+                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
                             quis
                             quis
                             voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
@@ -231,9 +350,9 @@
                         <div id="social-media" class="row text-center">
 
                             <div id="social-media-fb" class="col-sm-3" style="background-color: #3B5998;">
-                                    <!--Facebook-->
-                                    <a class="btn-floating btn-lg btn-fb" type="button" role="button"
-                                        href="https://www.facebook.com/PatrickAli123" style="background-color: #3B5998;
+                                <!--Facebook-->
+                                <a class="btn-floating btn-lg btn-fb" type="button" role="button"
+                                    href="https://www.facebook.com/PatrickAli123" style="background-color: #3B5998;
                                 display: inline-block;
                                 line-height: 37px;
                                 position: relative;
@@ -245,9 +364,9 @@
                                 /* margin: 10px;"><i class="fab fa-facebook-f" style="color: #fff"></i></a>
                             </div>
                             <div id="social-media-tw" class="col-sm-3" style="background-color: #55ACEE;">
-                                    <!--Twitter-->
-                                    <a class="btn-floating btn-lg btn-tw" type="button" role="button"
-                                        href="https://twitter.com/Patrick__Ali" style="background-color: #55ACEE;
+                                <!--Twitter-->
+                                <a class="btn-floating btn-lg btn-tw" type="button" role="button"
+                                    href="https://twitter.com/Patrick__Ali" style="background-color: #55ACEE;
                                 display: inline-block;
                                 line-height: 37px;
                                 position: relative;
@@ -284,9 +403,9 @@
                                 /* margin: 10px;"><i class="fab fa-youtube" style="color: #fff"></i></a>-->
                             </div>
                             <div id="social-media-gh" class="col-sm-3" style="background-color: #000;">
-                                    <!--Github-->
-                                    <a class="btn-floating btn-lg btn-git" type="button" role="button"
-                                        href="https://github.com/Patrick-Ali" style="background-color: #000;
+                                <!--Github-->
+                                <a class="btn-floating btn-lg btn-git" type="button" role="button"
+                                    href="https://github.com/Patrick-Ali" style="background-color: #000;
                                 display: inline-block;
                                 line-height: 37px;
                                 position: relative;
@@ -296,7 +415,7 @@
                                 border-radius: 20%;
                                 transition: .3s;
                                 /* margin: 10px;"><i class="fab fa-github" style="color: #fff"></i></a>
-                                    <!--Email
+                                <!--Email
                                 <a class="btn-floating btn-lg btn-email" type="button" role="button" style="background-color: #4B515D;
                                 display: inline-block;
                                 line-height: 37px;
@@ -334,9 +453,9 @@
     function iOS() {
 
         var iDevices = [
-            'iPad Simulator',
-            'iPhone Simulator',
-            'iPod Simulator',
+            'iPad Simliator',
+            'iPhone Simliator',
+            'iPod Simliator',
             'iPad',
             'iPhone',
             'iPod'
@@ -389,7 +508,7 @@
         //console.log("Scrolled")
         //console.log($(window).height()); // New height
         //console.log($(window).width());
-        $('.multi-sel').removeClass('test');
+        $('.mliti-sel').removeClass('test');
         $('#projects').removeClass('test');
         $('.navbar-collapse').collapse('hide');
     });
@@ -402,7 +521,7 @@
             if (this.id != "contact-info-a" && this.id != "projects-a") {
                 //console.log(this.id)
                 setTimeout(function () {
-                    $('.multi-sel').addClass('test');
+                    $('.mliti-sel').addClass('test');
                 }, 300);
             }
             else if (this.id == "projects-a") {
