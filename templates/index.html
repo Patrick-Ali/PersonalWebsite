@@ -9,6 +9,7 @@
             font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
             font-size: 22px;
             position: relative !important;
+            list-style: none;
         }
 
         a,
@@ -37,6 +38,15 @@
 
         .skill-head{
             background-color: darkgray;
+        }
+
+        @media screen and (min-height:900px){
+            #page-body {
+                padding-top:2rem!important
+            }
+            #convert{
+                top:100px;
+            }
         }
 
         /* h1, h2, h3, h4 {
@@ -116,7 +126,7 @@
                 <div id="introduction" class="col pt-5 mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne" id="One"
                         onclick="changeArrow(this.id)">
-                        <h2 id="int-title">Introduction <span id="arr-One" style="font-weight: bold;">&#9660;</span>
+                        <h2 id="int-title">Introduction <span id="arr-One" style="font-weight: bold;">-</span>
                         </h2>
                     </a>
                     <!--<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>-->
@@ -132,7 +142,7 @@
                 <div id="education" class="col mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" id="Two"
                         onclick="changeArrow(this.id)">
-                        <h2 id="ed-title">Education <span id="arr-Two" style="font-weight: bold;">&#9660;</span> </h2>
+                        <h2 id="ed-title">Education <span id="arr-Two" style="font-weight: bold;">-</span> </h2>
                     </a>
                     <div id="collapseTwo" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>2018-2019 <b>MSc Software Engineering</b>, Coventry University. (Distinction)</p>
@@ -147,7 +157,7 @@
                 <div id="skills" class="col mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" id="Three"
                         onclick="changeArrow(this.id)">
-                        <h2 id="skills-title">Skills <span id="arr-Three" style="font-weight: bold;">&#9660;</span></h2>
+                        <h2 id="skills-title">Skills <span id="arr-Three" style="font-weight: bold;">-</span></h2>
                     </a>
                     <div id="collapseThree" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <!--<div class="table-responsive">
@@ -287,7 +297,7 @@
                 <div id="work-exp" class="col mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseFour" href="#collapseFour" id="Four"
                         onclick="changeArrow(this.id)">
-                        <h2 id="exp-title">Work Experience <span id="arr-Four" style="font-weight: bold;">&#9660;</span>
+                        <h2 id="exp-title">Work Experience <span id="arr-Four" style="font-weight: bold;">-</span>
                         </h2>
                     </a>
                     <div id="collapseFour" class="collapse show" style="transition: all 0.6s ease 0s;">
@@ -316,7 +326,7 @@
                 <div id="projects" class="col">
                     <a data-toggle="collapse" data-target="#collapseFive" href="#collapseFive" id="Five"
                         onclick="changeArrow(this.id)">
-                        <h2 id="proj-title">Projects <span id="arr-Five" style="font-weight: bold;">&#9660;</span></h2>
+                        <h2 id="proj-title">Projects <span id="arr-Five" style="font-weight: bold;">-</span></h2>
                     </a>
                     <div id="collapseFive" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
@@ -344,7 +354,7 @@
                 <div id="contact-info" class="col">
                     <a data-toggle="collapse" data-target="#collapseSix" href="#collapseSix" id="Six"
                         onclick="changeArrow(this.id)">
-                        <h2>Contact <span id="arr-Six" style="font-weight: bold;">&#9660;</span></h2>
+                        <h2>Contact <span id="arr-Six" style="font-weight: bold;">-</span></h2>
                     </a>
                     <div id="collapseSix" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <div id="social-media" class="row text-center">
@@ -435,7 +445,7 @@
             </div>
         </div>
     </div>
-    <div class="content-footer">
+    <div id="convert" class="content-footer">
         <button type="button" id="btn-export" onclick="exportHTML();" class="btn btn-primary btn-block"
             style="margin: 1em;">Export to
             Microsoft Word Document</button>
@@ -554,10 +564,10 @@
         //console.log(document.getElementById("collapse"+clicked_id).className)
         if (document.getElementById("collapse" + clicked_id).className == "collapse show") {
             //console.log("It has collapsed")
-            document.getElementById("arr-" + clicked_id).innerHTML = "&#9650;"//"&#8681;"
+            document.getElementById("arr-" + clicked_id).innerHTML = "+"//"&#9650;"//"&#8681;"
         }
         else {
-            document.getElementById("arr-" + clicked_id).innerHTML = "&#9660;"//"&#8679;"
+            document.getElementById("arr-" + clicked_id).innerHTML = "-"//"&#9660;"//"&#8679;"
         }
     }
 
