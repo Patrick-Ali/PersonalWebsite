@@ -1,0 +1,699 @@
+<html lang="en">
+
+<head>
+
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
+            font-size: 22px;
+            position: relative !important;
+            list-style: none;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none !important;
+            color: black !important;
+        }
+
+        .test {
+            padding-top: 50px;
+        }
+
+        .test1 {
+            padding-top: 50px;  
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .rem {
+            color: white;
+        }
+
+        .skill-head{
+            background-color: darkgray;
+        }
+
+        @media screen and (min-height:900px){
+            #page-body {
+                padding-top:2rem!important
+            }
+            #convert{
+                top:100px;
+            }
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+<!-- jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<!--html2canvas
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+
+<!--jsPDF-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+    integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+    crossorigin="anonymous"></script>
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Patrick Ali CV</title>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="1000">
+
+    <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+        <a class="navbar-brand" href="/">Patrick Ali</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <li class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#introduction">Introduction</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#work-exp">Work Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="projects-a" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-info-a" href="#contact-info">Contact Information</a>
+            </li>
+            </li>
+        </div>
+    </nav>
+
+    <div id="page-body" class="container-fluid pt-2">
+        <div id="source-html" class="row">
+            <div class="col" id="source-html-t">
+                <div id="introduction" class="col pt-5 mliti-sel">
+                    <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne" id="One"
+                        onclick="changeArrow(this.id)">
+                        <h2 id="int-title">Introduction <span id="arr-One" style="font-weight: bold;">-</span>
+                        </h2>
+                    </a>
+                    <!--<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>-->
+                    <div id="collapseOne" class="collapse show" style="transition: all 0.6s ease 0s;">
+                        <p>I have recently completed an MSc in Software Engineering with Distinction. Throughout my
+                            studies, work experience, and interests I have gained and developed several relevant skills,
+                            including communication, teamwork, leadership, and timetabling. I relish challenges and am
+                            well versed in both working and leading teams while being highly capable of individual work.
+                            I strive to provide outstanding work in all environments, and I am highly motivated by my
+                            passion for technology. </p>
+                    </div>
+                </div>
+                <div id="education" class="col mliti-sel">
+                    <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" id="Two"
+                        onclick="changeArrow(this.id)">
+                        <h2 id="ed-title">Education <span id="arr-Two" style="font-weight: bold;">-</span> </h2>
+                    </a>
+                    <div id="collapseTwo" class="collapse show" style="transition: all 0.6s ease 0s;">
+                        <p>2018-2019 <b>MSc Software Engineering</b>, Coventry University. (Distinction)</p>
+                        <p>2015-2018 <b>BSc (Hons) Computing</b>, Coventry University. (1st)</p>
+                        <p>2013-2015 <b>HND Computing and Systems Development</b>, Henley College, Coventry.
+                            (Distinction)</p>
+                        <p>2011-2013 <b>3x A-Levels</b>, Cardinal Wiseman, Coventry.</p>
+                        <p style="text-indent: 1em;">Business, History, and IT</p>
+                        <p><b>6x GCSEs</b> (A-C) including English, Math, and Science</p>
+                    </div>
+                </div>
+                <div id="skills" class="col mliti-sel">
+                    <a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" id="Three"
+                        onclick="changeArrow(this.id)">
+                        <h2 id="skills-title">Skills <span id="arr-Three" style="font-weight: bold;">-</span></h2>
+                    </a>
+                    <div id="collapseThree" class="collapse show" style="transition: all 0.6s ease 0s;">
+                        <!--<div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="thead-light">
+                                    <tr style="text-align: center;">
+                                        <th class="w-25">Programming Languages</th>
+                                        <th class="w-25">Hardware</th>
+                                        <th class="w-25">Software</th>
+                                        <th class="w-25">Practices/Methods</th>
+                                    </tr>
+                                </thead>
+                                <tr>-->
+                        <!---->
+                        <div id="Skills-Head" class="row" style="background-color: darkgray;">
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Programming Languages, Databases, and Formats</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Operating Systems</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Programs, IDEs, and Version Control</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Frameworks</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Hardware</b></p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p style="text-align: center;"><b>Development Methodologies</b></p>
+                            </div>
+                        </div>
+                        <div id="Skills" class="row">
+                            <div class="col-sm-2">
+                                
+                                <ul>
+                                <li>C++</li>
+                                <li>Python 3</li>
+                                <li>SQL (MySQL, Oracle Databases)</li>
+                                <li>Java</li>
+                                <li>Swift</li>
+                                <li>JQuery</li>
+                                <li>Visual Basic</li>
+                                <li>C#</li>
+                                <li>HTML 5</li>
+                                <li>CSS 3</li>
+                                <li>JavaScript</li>
+                                <li>Bootstrap 4</li>
+                                <li>XML</li>
+                                <li>JSON</li>
+                                <li>MongoDB</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2" style="background-color: lightgrey;">
+                                <!---->
+                                
+                                <ul>
+                                <li>macOS</li>
+                                <li>Windows XP-10</li>
+                                <li>iOS</li>
+                                <li>iPadOS</li>
+                                <li>watchOS</li>
+                                <li>Android</li>
+                                <li>Linux - Ubuntu, Raspbian</li>
+                                <li>Chromium</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <!---->
+                                
+                                <ul>
+                                <li>Microsoft Office including Word, Powerpoint, Excel</li>
+                                <li>Microsoft Project</li>
+                                <li>Microsoft Visio</li>
+                                <li>Microsoft Visual Studio</li>
+                                <li>Microsoft Visual Studio Code</li>
+                                <li>Netbeans</li>
+                                <li>Python IDLE</li>
+                                <li>Xcode</li>
+                                <li>GitHub</li>
+                                <li>GitLab</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2" style="background-color: lightgrey;">
+                                
+                                
+                                <ul>
+                                    <li>.NET</li>
+                                    <li>Node.js</li>
+                                    <li>Python Flask</li>
+                                    <li>UIKit</li>
+                                    <li>WatchKit</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-2">
+                                
+                                
+                                <ul>
+                                <li>PC, build and maintain</li>
+                                <li>CISCO Switches and Routers</li>
+                            </ul>
+                            </div>
+
+                            <div class="col-sm-2" style="background-color: lightgrey;">
+                                
+                                
+                                <ul>
+                                <li>Agile</li>
+                                <li>SCRUM</li>
+                                <li>Test Driven Development</li>
+                                <li>Believe Driven Development</li>
+                                <li>Continues Development/ Delivery</li>
+                                <li>Kanban</li>
+                                <li>Version Control</li>
+                                <li>Iterative Development</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--</tr>
+                                </table>
+                        </div>-->
+                        <h4 id="soft-title">Soft Skills</h4>
+                        <dl>
+                            <dt>Test</dt>
+                            <dd>- Testing</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div id="work-exp" class="col mliti-sel">
+                    <a data-toggle="collapse" data-target="#collapseFour" href="#collapseFour" id="Four"
+                        onclick="changeArrow(this.id)">
+                        <h2 id="exp-title">Work Experience <span id="arr-Four" style="font-weight: bold;">-</span>
+                        </h2>
+                    </a>
+                    <div id="collapseFour" class="collapse show" style="transition: all 0.6s ease 0s;">
+                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
+                            In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
+                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
+                            quis
+                            quis
+                            voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
+                            magna
+                            exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
+                            eu
+                            commodo nisi laboris est.</p>
+                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
+                            In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
+                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
+                            quis
+                            quis
+                            voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
+                            magna
+                            exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
+                            eu
+                            commodo nisi laboris est.</p>
+                    </div>
+                </div>
+                <div id="projects" class="col">
+                    <a data-toggle="collapse" data-target="#collapseFive" href="#collapseFive" id="Five"
+                        onclick="changeArrow(this.id)">
+                        <h2 id="proj-title">Projects <span id="arr-Five" style="font-weight: bold;">-</span></h2>
+                    </a>
+                    <div id="collapseFive" class="collapse show" style="transition: all 0.6s ease 0s;">
+                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
+                            In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
+                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
+                            quis
+                            quis
+                            voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
+                            magna
+                            exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
+                            eu
+                            commodo nisi laboris est.</p>
+                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
+                            In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
+                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
+                            quis
+                            quis
+                            voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
+                            magna
+                            exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
+                            eu
+                            commodo nisi laboris est.</p>
+                    </div>
+                </div>
+                <div id="contact-info" class="col">
+                    <a data-toggle="collapse" data-target="#collapseSix" href="#collapseSix" id="Six"
+                        onclick="changeArrow(this.id)">
+                        <h2>Contact <span id="arr-Six" style="font-weight: bold;">-</span></h2>
+                    </a>
+                    <div id="collapseSix" class="collapse show" style="transition: all 0.6s ease 0s;">
+                        <div id="social-media" class="row text-center">
+
+                            <div id="social-media-fb" class="col-sm-3" style="background-color: #3B5998;">
+                                <!--Facebook-->
+                                <a class="btn-floating btn-lg btn-fb" type="button" role="button"
+                                    href="https://www.facebook.com/PatrickAli123" style="background-color: #3B5998;
+                                display: inline-block;
+                                line-height: 37px;
+                                position: relative;
+                                overflow: hidden;
+                                z-index: 1;
+                                /* padding: 0; */
+                                border-radius: 20%;
+                                transition: .3s;
+                                /* margin: 10px;"><i class="fab fa-facebook-f" style="color: #fff"></i></a>
+                            </div>
+                            <div id="social-media-tw" class="col-sm-3" style="background-color: #55ACEE;">
+                                <!--Twitter-->
+                                <a class="btn-floating btn-lg btn-tw" type="button" role="button"
+                                    href="https://twitter.com/Patrick__Ali" style="background-color: #55ACEE;
+                                display: inline-block;
+                                line-height: 37px;
+                                position: relative;
+                                overflow: hidden;
+                                z-index: 1;
+                                /* padding: 0; */
+                                border-radius: 20%;
+                                transition: .3s;
+                                /* margin: 10px;"><i class="fab fa-twitter" style="color: #fff"></i></a>
+                            </div>
+                            <div id="social-media-lk" class="col-sm-3" style="background-color: #0082CA;">
+                                <!--Linkedin-->
+                                <a class="btn-floating btn-lg btn-li" type="button" role="button"
+                                    href="https://www.linkedin.com/in/patrick-ali-b74296128/" style="background-color: #0082CA;
+                                display: inline-block;
+                                line-height: 37px;
+                                position: relative;
+                                overflow: hidden;
+                                z-index: 1;
+                                /* padding: 0; */
+                                border-radius: 20%;
+                                transition: .3s;
+                                /* margin: 10px;"><i class="fab fa-linkedin-in" style="color: #fff"></i></a>
+                                <!--Youtube
+                                <a class="btn-floating btn-lg btn-yt" type="button" role="button" style="background-color: #CD201F;
+                                display: inline-block;
+                                line-height: 37px;
+                                position: relative;
+                                overflow: hidden;
+                                z-index: 1;
+                                /* padding: 0; */
+                                border-radius: 20%;
+                                transition: .3s;
+                                /* margin: 10px;"><i class="fab fa-youtube" style="color: #fff"></i></a>-->
+                            </div>
+                            <div id="social-media-gh" class="col-sm-3" style="background-color: #000;">
+                                <!--Github-->
+                                <a class="btn-floating btn-lg btn-git" type="button" role="button"
+                                    href="https://github.com/Patrick-Ali" style="background-color: #000;
+                                display: inline-block;
+                                line-height: 37px;
+                                position: relative;
+                                overflow: hidden;
+                                z-index: 1;
+                                /* padding: 0; */
+                                border-radius: 20%;
+                                transition: .3s;
+                                /* margin: 10px;"><i class="fab fa-github" style="color: #fff"></i></a>
+                                <!--Email
+                                <a class="btn-floating btn-lg btn-email" type="button" role="button" style="background-color: #4B515D;
+                                display: inline-block;
+                                line-height: 37px;
+                                position: relative;
+                                overflow: hidden;
+                                z-index: 1;
+                                /* padding: 0; */
+                                border-radius: 20%;
+                                transition: .3s;
+                                /* margin: 10px;"><i class="fas fa-envelope" style="color: #fff"></i></a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="print-title" style='display: none;'>Print CV</h2>
+            </div>
+        </div>
+    </div>
+    <div id="convert" class="content-footer">
+        <button type="button" id="btn-export" onclick="exportHTML();" class="btn btn-primary btn-block"
+            style="margin: 1em;">Export to
+            Microsoft Word Document</button>
+        <button type="button" id="btn-export-pdf" onclick="demoFromHTML();" class="btn btn-danger btn-block"
+            style="margin: 1em;">Export to
+            PDF</button>
+        <!--<button id="btn-export" onclick="exportHTML();">Export to
+            word doc</button>-->
+    </div>
+</body>
+
+<script>
+
+    //https://stackoverflow.com/questions/9038625/detect-if-device-is-ios
+    function iOS() {
+
+        var iDevices = [
+            'iPad Simliator',
+            'iPhone Simliator',
+            'iPod Simliator',
+            'iPad',
+            'iPhone',
+            'iPod'
+        ];
+
+        if (!!navigator.platform) {
+            while (iDevices.length) {
+                if (navigator.platform === iDevices.pop()) { return true; }
+            }
+        }
+
+        return false;
+    }
+
+    $(document).ready(function () {
+        //alert("document ready occurred!");
+        //console.log(iOS())
+        //var social_media_code = "";
+        var div_start = "<div id=\"social-media-touch\" class=\"row\">";
+        var div_fb = "<div id=\"social-media-touch-fb\" class=\"col-sm-3\">";
+        var fbook_button = "<a href=\"https://www.facebook.com/PatrickAli123\"><button type=\"button\" class=\"btn btn-block\" style=\"color: white; background-color: #3B5998;\">FaceBook</button></a>";
+        var div_end_fb = "</div>";
+        var div_tw = "<div id=\"social-media-touch-tw\" class=\"col-sm-3\">";
+        var twitter_button = "<a href=\"https://twitter.com/Patrick__Ali\"><button type=\"button\" class=\"btn btn-block\" style=\"color: white; background-color: #55ACEE;\">Twitter</button></a>";
+        var div_end_tw = "</div>";
+        var div_lk = "<div id=\"social-media-touch-lk\" class=\"col-sm-3\">";
+        var linkden_button = "<a href=\"https://www.linkedin.com/in/patrick-ali-b74296128/\"> <button type=\"button\" class=\"btn btn-block\" style=\"color: white; background-color: #0082CA;\">Linkden</button></a>";
+        var div_end_lk = "</div>";
+        var div_gh = "<div id=\"social-media-touch-gh\" class=\"col-sm-3\">";
+        var github_button = "<a href=\"https://github.com/Patrick-Ali\"> <button type=\"button\" class=\"btn btn-block\" style=\"color: white; background-color: #000;\">GitHub</button></a>";
+        var div_end_gh = "</div>";
+        var div_end = "</div>";
+        var social_media_code = div_start + div_fb + fbook_button + div_end_fb +
+            div_tw + twitter_button + div_end_tw +
+            div_lk + linkden_button + div_end_lk +
+            div_gh + github_button + div_end_gh
+            + div_end;
+        if (iOS()) {
+            $("#btn-export").remove();
+            $("#social-media").remove();
+            $(social_media_code).appendTo("#collapseSix");
+        }
+        //$("#social-media").remove();
+        //$(social_media_code).appendTo("#collapseSix");
+    });
+    //console.log("scrolling")
+
+    //On Scroll remove class from sections
+    $(window).scroll(function () {
+        //console.log("Scrolled")
+        //console.log($(window).height()); // New height
+        //console.log($(window).width());
+        $('.mliti-sel').removeClass('test');
+        $('#projects').removeClass('test');
+        $('.navbar-collapse').collapse('hide');
+    });
+
+    //On clicking link add class to sections
+    $('.navbar-nav>li>a').on('click', function () {
+        $('.navbar-collapse').collapse('hide');
+        //console.log(this)
+        if ($(window).width() < 900) {
+            if (this.id != "contact-info-a" && this.id != "projects-a") {
+                //console.log(this.id)
+                setTimeout(function () {
+                    $('.mliti-sel').addClass('test');
+                }, 300);
+            }
+            else if (this.id == "projects-a") {
+                //console.log("projects")
+                setTimeout(function () {
+                    //console.log("projects")
+                    $('#projects').addClass('test');
+                }, 300);
+            }
+            else {
+                //console.log("Click not recognised")
+            }
+        }
+    });
+
+    //On Clicking/Tapping Window
+    $(window).click(function () {
+        $('.navbar-collapse').collapse('hide');
+    });
+
+    $("#page-body").on({
+        'touchstart': function () {
+            $('.navbar-collapse').collapse('hide');
+        }
+    });
+
+    function changeArrow(clicked_id) {
+        //console.log(clicked_id)
+        //console.log(document.getElementById("arr-"+clicked_id).textContent)
+        //console.log(document.getElementById("collapse"+clicked_id).className)
+        if (document.getElementById("collapse" + clicked_id).className == "collapse show") {
+            //console.log("It has collapsed")
+            document.getElementById("arr-" + clicked_id).innerHTML = "+"//"&#9650;"//"&#8681;"
+        }
+        else {
+            document.getElementById("arr-" + clicked_id).innerHTML = "-"//"&#9660;"//"&#8679;"
+        }
+    }
+
+    /*function exportPDF() {
+        const filename = 'Patrick-Ali-CV-T.pdf';
+        let pdf = new jsPDF('p', 'mm', 'a4');
+        var docText = document.getElementById("source-html").textContent;
+        console.log(docText);
+        pdf.text = ("docText", 1, 1);
+        pdf.save(filename);
+		/*html2canvas(document.querySelector('#source-html'), 
+								{scale: 4}
+						 ).then(canvas => {
+			let pdf = new jsPDF('p', 'mm', 'a4');
+			pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+			pdf.save(filename);
+        });
+        //console.log(document.getElementById("source-html").textContent)
+    }*/
+
+    function exportHTML() {
+        var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+            "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+            "xmlns='http://www.w3.org/TR/REC-html40'>" +
+            "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+        var footer = "</body></html>";
+        var headStyle = { "color": "black", "padding": "0", "margin": "0", "margin-top": "2em", "padding-top": "2em", "font-family": "Arial, sans-serif", "text-decoration": "none", "font-size": "18px", "font-weight": "bold" };
+        var bodyStyle = { "color": "black", "font-family": "Arial, sans-serif", "padding": "0.5em", "margin": "0.5em", "font-size": "16px", "text-align": " justify" }
+        $("span").remove();
+        $("#print-title").remove();
+        $("#contact-info").remove();
+        $("#One").removeAttr("href");
+        $("#Two").removeAttr("href");
+        $("#Three").removeAttr("href");
+        $("#Four").removeAttr("href");
+        $("#Five").removeAttr("href");
+        $("#int-title").css(headStyle);
+        $("#ed-title").css(headStyle);
+        $("#skills-title").css(headStyle);
+        $("#exp-title").css(headStyle);
+        $("#proj-title").css(headStyle);
+        $("#soft-title").css(headStyle);
+        $("p").css(bodyStyle);
+        $("dd").css(bodyStyle);
+        bodyStyle["font-weight"] = "bold";
+        $("dt").css(bodyStyle);
+        bodyStyle["text-align"] = "center";
+        // bodyStyle.push(
+        //     {
+        //         key: "font-weight",
+        //         value: "bold"
+        //     }
+        // );
+        $("th").css(bodyStyle);
+        var sourceHTML = header + document.getElementById("source-html-t").innerHTML + footer;
+        //console.log(sourceHTML)
+        var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+        var fileDownload = document.createElement("a");
+        document.body.appendChild(fileDownload);
+        fileDownload.href = source;
+        fileDownload.download = 'Patrick-Ali-CV.doc';
+        fileDownload.click();
+        document.body.removeChild(fileDownload);
+        location.reload();
+    }
+</script>
+<script>
+    function demoFromHTML() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        // source can be HTML-formatted string, or a reference
+        // to an actual DOM element from which the text will be scraped.
+        source = $('#source-html-t')[0];
+        console.log(source)
+
+        var headStyle = { "color": "black", "padding": "0", "margin": "0", "margin-top": "1em", "padding-top": "1em", "font-family": "Arial, sans-serif", "text-decoration": "none", "font-size": "18px", "font-weight": "bold" };
+        var bodyStyle = { "color": "black", "font-family": "Arial, sans-serif", "font-size": "16px", "text-align": " justify" }
+        $("span").remove();
+        $("#print-title").remove();
+        $("#contact-info").remove();
+        $("#One").removeAttr("href");
+        $("#Two").removeAttr("href");
+        $("#Three").removeAttr("href");
+        $("#Four").removeAttr("href");
+        $("#Five").removeAttr("href");
+        $("#int-title").css(headStyle);
+        $("#ed-title").css(headStyle);
+        $("#skills-title").css(headStyle);
+        $("#exp-title").css(headStyle);
+        $("#proj-title").css(headStyle);
+        $("p").css(bodyStyle);
+        $("dd").css(bodyStyle);
+        bodyStyle["font-weight"] = "bold";
+        $("dt").css(bodyStyle);
+        bodyStyle["text-align"] = "center";
+        // bodyStyle.push(
+        //     {
+        //         key: "font-weight",
+        //         value: "bold"
+        //     }
+        // );
+        $("th").css(bodyStyle);
+        // we support special element handlers. Register them with jQuery-style 
+        // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+        // There is no support for any other type of selectors 
+        // (class, of compound) at this time.
+        specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"
+                return true
+            }
+        };
+        margins = {
+            top: 20,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+        // all coords and widths are in jsPDF instance's declared units
+        // 'inches' in this case
+        pdf.fromHTML(
+            source, // HTML string or DOM elem ref.
+            margins.left, // x coord
+            margins.top, { // y coord
+            'width': margins.width, // max width of content on PDF
+            'elementHandlers': specialElementHandlers
+        },
+
+            function (dispose) {
+                // dispose: object with X, Y of the last line add to the PDF 
+                //          this allow the insertion of new lines after html
+                pdf.save('Patrick-Ali-CV.pdf');
+
+            }, margins
+
+        );
+        location.reload();
+    }
+</script>
+
+</html>
