@@ -124,27 +124,33 @@
     <div id="page-body" class="container-fluid pt-2">
         <div id="source-html" class="row">
             <div class="col" id="source-html-t">
-                <div id="introduction" class="col pt-5 mliti-sel">
-                    <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne" id="One"
-                        onclick="changeArrow(this.id)">
-                        <h2 id="int-title">Introduction <span id="arr-One" style="font-weight: bold;">-</span>
-                        </h2>
-                    </a>
-                    <!--<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>-->
-                    <div id="collapseOne" class="collapse show" style="transition: all 0.6s ease 0s;">
-                        <p>I have recently completed an MSc in Software Engineering with Distinction. Throughout my
-                            studies, work experience, and interests I have gained and developed several relevant skills,
-                            including communication, teamwork, leadership, and timetabling. I relish challenges and am
-                            well versed in both working and leading teams while being highly capable of individual work.
-                            I strive to provide outstanding work in all environments, and I am highly motivated by my
-                            passion for technology. </p>
+                <div id="c1" class="card">
+                    <div id="introduction" class="col pt-5 mliti-sel">
+                        <a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne" id="One"
+                            onclick="changeArrow(this.id)">
+                            <h2 id="int-title" class="card-header">Introduction <span id="arr-One" style="font-weight: bold;">-</span>
+                            </h2>
+                        </a>
+                        <div class="card-body">
+                            <!--<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Simple collapsible</button>-->
+                            <div id="collapseOne" class="collapse show" style="transition: all 0.6s ease 0s;">
+                                <p>I have recently completed an MSc in Software Engineering with Distinction. Throughout my
+                                    studies, work experience, and interests I have gained and developed several relevant skills,
+                                    including communication, teamwork, leadership, and timetabling. I relish challenges and am
+                                    well versed in both working and leading teams while being highly capable of individual work.
+                                    I strive to provide outstanding work in all environments, and I am highly motivated by my
+                                    passion for technology. </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div id="c2" class="card">
                 <div id="education" class="col mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" id="Two"
                         onclick="changeArrow(this.id)">
-                        <h2 id="ed-title">Education <span id="arr-Two" style="font-weight: bold;">-</span> </h2>
+                        <h2 id="ed-title" class="card-header">Education <span id="arr-Two" style="font-weight: bold;">-</span> </h2>
                     </a>
+                    <div class="card-body">
                     <div id="collapseTwo" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <p>2018-2019 <b>MSc Software Engineering</b>, Coventry University. (Distinction)</p>
                         <p>2015-2018 <b>BSc (Hons) Computing</b>, Coventry University. (1st)</p>
@@ -155,6 +161,8 @@
                         <p><b>6x GCSEs</b> (A-C) including English, Math, and Science</p>
                     </div>
                 </div>
+                </div>
+            </div>
                 <div id="skills" class="col mliti-sel">
                     <a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" id="Three"
                         onclick="changeArrow(this.id)">
@@ -355,7 +363,7 @@
                 <div id="contact-info" class="col">
                     <a data-toggle="collapse" data-target="#collapseSix" href="#collapseSix" id="Six"
                         onclick="changeArrow(this.id)">
-                        <h2>Contact <span id="arr-Six" style="font-weight: bold;">-</span></h2>
+                        <h2 id="contact-title">Contact <span id="arr-Six" style="font-weight: bold;">-</span></h2>
                     </a>
                     <div id="collapseSix" class="collapse show" style="transition: all 0.6s ease 0s;">
                         <div id="social-media" class="row text-center">
@@ -466,22 +474,39 @@
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
     //Get the current theme from local storage
     const currentTheme = localStorage.getItem("theme");
+    const titles = document.getElementsByTagName("h2");
+    console.log(titles[0].id)
     if (currentTheme == "dark") {
         //If dark mode is enabled add dark theme class to body
         document.body.classList.toggle("dark-theme");
+        for(var i = 0; i < titles.length; i++){
+            var title_id = titles[i].id;
+            console.log(title_id); 
+            //document.getElementById("int-title").classList.add("mystyle");
+            document.getElementById(titles[i].id).classList.toggle("dark-theme");
+        }
     } else if (currentTheme == "light") {
         //Otherwise add the light theme class
-    document.body.classList.toggle("light-theme");
+        document.body.classList.toggle("light-theme");
+        for(var i = 0; i < titles.length; i++){
+            document.getElementById(titles[i].id).classList.toggle("light-theme");
+        }
     }
 
     btn.addEventListener("click", function () {
     if (prefersDarkScheme.matches) {
         //If current theme is dark change to light
         document.body.classList.toggle("light-theme");
+        for(var i = 0; i < titles.length; i++){
+            document.getElementById(titles[i].id).classList.toggle("light-theme");
+        }
         //Update theme to refelect current selection
         var theme = document.body.classList.contains("light-theme") ? "light": "dark";
     } else {
         document.body.classList.toggle("dark-theme");
+        for(var i = 0; i < titles.length; i++){
+            document.getElementById(titles[i].id).classList.toggle("dark-theme");
+        }
         var theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
     }
     //Save selection to local storage

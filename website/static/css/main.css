@@ -11,11 +11,21 @@ body.dark-theme {
   --bkg-color: #2a2a2a;
 }
 
+h2.dark-theme{
+  background-color: #3d3d3d;
+}
+
 @media (prefers-color-scheme: dark) {
   /* defaults to dark theme */
   body {
     --text-color: #eee;
     --bkg-color: #2a2a2a/*#121212;*/
+  }
+  h2{
+    background-color: #3d3d3d;
+  }
+  h2.light-theme{
+    background-color: #fff;
   }
   body.light-theme {
     --text-color: #222;
@@ -34,7 +44,12 @@ body {
 h1, h2,
 p {
   color: var(--text-color);
-}  
+} 
+
+#c1, #c2, #c3, #c4, #c5{
+  background-color: var(--bkg-color);
+  color: var(--text-color);
+}
   
 
 /*body {
