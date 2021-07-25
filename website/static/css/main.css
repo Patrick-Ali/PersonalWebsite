@@ -21,7 +21,28 @@ h2.dark-theme{
 
 #acl-1.dark-theme, #acl-2.dark-theme, #acl-3.dark-theme{
   background-color: #423F3E;
-} 
+}
+
+.navbar {
+  transition: all 0.4s;
+}
+
+#navbar.dark-theme{
+  background-color: #2a2a2a;
+}
+
+#n0.dark-theme, #n1.dark-theme, #n2.dark-theme, #n3.dark-theme, #n4.dark-theme, 
+#projects-a.dark-theme, #contact-info-a.dark-theme{
+  color: #eee!important;
+}
+
+#navbar.active-light-theme{
+  background-color: lightgrey!important;
+}
+
+#navbar.active-dark-theme{
+  background-color: #423F3E;
+}
 
 @media (prefers-color-scheme: dark) {
   /* defaults to dark theme */
@@ -34,6 +55,23 @@ h2.dark-theme{
   } 
   h2{
     background-color: #3d3d3d;
+  }
+  #navbar.dark-theme{
+    background-color: #2a2a2a;
+  }
+
+  #n0.dark-theme, #n1.dark-theme, #n2.dark-theme, #n3.dark-theme, #n4.dark-theme, 
+  #projects-a.dark-theme, #contact-info-a.dark-theme{
+    color: #eee!important;
+  }
+
+  #navbar.light-theme{
+    background-color: #fff;
+  }
+
+  #n0.light-theme, #n1.light-theme, #n2.light-theme, #n3.light-theme, #n4.light-theme, 
+  #projects-a.light-theme, #contact-info-a.light-theme{
+    color: #222!important;
   }
 
   #Skills-Head.dark-theme{

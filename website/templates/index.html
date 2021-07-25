@@ -45,24 +45,24 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="1000">
 
-    <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
-        <a class="navbar-brand" href="/">Patrick Ali</a>
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <a id="n0" class="navbar-brand" href="/">Patrick Ali</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <li class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#introduction">Introduction</a>
+                <a id="n1" class="nav-link" href="#introduction">Introduction</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#education">Education</a>
+                <a id="n2" class="nav-link" href="#education">Education</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#skills">Skills</a>
+                <a id="n3" class="nav-link" href="#skills">Skills</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#work-exp">Work Experience</a>
+                <a id="n4" class="nav-link" href="#work-exp">Work Experience</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="projects-a" href="#projects">Projects</a>
@@ -71,7 +71,7 @@
                 <a class="nav-link" id="contact-info-a" href="#contact-info">Contact Information</a>
             </li>
             <li class="nav-item">
-                <button class="btn-toggle">Toggle Dark-Mode</button>
+                <button class="btn-toggle"><img src="{{ url_for('static', filename='moon-6692.png') }}"></button>
             </li>
             </li>
         </div>
@@ -259,75 +259,112 @@
                     </div>
                 </div>
 
-                <div id="work-exp" class="col mliti-sel">
-                    <a data-toggle="collapse" data-target="#collapseFour" href="#collapseFour" id="Four"
-                        onclick="changeArrow(this.id)">
-                        <h2 id="exp-title">Work Experience <span id="arr-Four" style="font-weight: bold;">-</span>
-                        </h2>
-                    </a>
-                    <div id="collapseFour" class="collapse show" style="transition: all 0.6s ease 0s;">
-                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
-                            In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
-                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
-                            quis
-                            quis
-                            voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
-                            magna
-                            exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
-                            eu
-                            commodo nisi laboris est.</p>
-                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
-                            In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
-                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
-                            quis
-                            quis
-                            voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
-                            magna
-                            exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
-                            eu
-                            commodo nisi laboris est.</p>
+                <div id="c4" class="card">
+                    <div id="work-exp" class="col mliti-sel">
+                        <a data-toggle="collapse" data-target="#collapseFour" href="#collapseFour" id="Four"
+                            onclick="changeArrow(this.id)">
+                            <h2 id="exp-title" class="card-header">Work Experience <span id="arr-Four"
+                                    style="font-weight: bold;">-</span>
+                            </h2>
+                        </a>
+                        <div class="card-body">
+                            <div id="collapseFour" class="collapse show" style="transition: all 0.6s ease 0s;">
+                                <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
+                                    In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia
+                                    tempor. Ut
+                                    excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim
+                                    laboris.
+                                    Et
+                                    quis
+                                    quis
+                                    voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum
+                                    dolore
+                                    magna
+                                    exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id
+                                    commodo.
+                                    Id ad
+                                    eu
+                                    commodo nisi laboris est.</p>
+                                <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
+                                    In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia
+                                    tempor. Ut
+                                    excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim
+                                    laboris.
+                                    Et
+                                    quis
+                                    quis
+                                    voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum
+                                    dolore
+                                    magna
+                                    exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id
+                                    commodo.
+                                    Id ad
+                                    eu
+                                    commodo nisi laboris est.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="projects" class="col">
-                    <a data-toggle="collapse" data-target="#collapseFive" href="#collapseFive" id="Five"
-                        onclick="changeArrow(this.id)">
-                        <h2 id="proj-title">Projects <span id="arr-Five" style="font-weight: bold;">-</span></h2>
-                    </a>
-                    <div id="collapseFive" class="collapse show" style="transition: all 0.6s ease 0s;">
-                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
-                            In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
-                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
-                            quis
-                            quis
-                            voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
-                            magna
-                            exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
-                            eu
-                            commodo nisi laboris est.</p>
-                        <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
-                            In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia tempor. Ut
-                            excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim laboris. Et
-                            quis
-                            quis
-                            voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum dolore
-                            magna
-                            exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id commodo. Id ad
-                            eu
-                            commodo nisi laboris est.</p>
+                <div id="c5" class="card">
+                    <div id="projects" class="col">
+                        <a data-toggle="collapse" data-target="#collapseFive" href="#collapseFive" id="Five"
+                            onclick="changeArrow(this.id)">
+                            <h2 id="proj-title" class="card-header">Projects <span id="arr-Five"
+                                    style="font-weight: bold;">-</span></h2>
+                        </a>
+                        <div class="card-body">
+                            <div id="collapseFive" class="collapse show" style="transition: all 0.6s ease 0s;">
+                                <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
+                                    In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia
+                                    tempor. Ut
+                                    excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim
+                                    laboris.
+                                    Et
+                                    quis
+                                    quis
+                                    voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum
+                                    dolore
+                                    magna
+                                    exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id
+                                    commodo.
+                                    Id ad
+                                    eu
+                                    commodo nisi laboris est.</p>
+                                <p>Ex velit dolor ea nostrud non est in Lorem nlila exercitation non enim ipsum mollit.
+                                    In nisi minim amet excepteur sint laboris consequat duis labore nisi amet officia
+                                    tempor. Ut
+                                    excepteur fugiat incididunt aliquip non sit quis lilamco excepteur aliqua enim
+                                    laboris.
+                                    Et
+                                    quis
+                                    quis
+                                    voluptate pariatur eu quis. Nisi sit occaecat esse cillum anim mollit est et laborum
+                                    dolore
+                                    magna
+                                    exercitation. Ipsum voluptate dolore aliquip consequat Lorem nostrud dolor id
+                                    commodo.
+                                    Id ad
+                                    eu
+                                    commodo nisi laboris est.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="contact-info" class="col">
-                    <a data-toggle="collapse" data-target="#collapseSix" href="#collapseSix" id="Six"
-                        onclick="changeArrow(this.id)">
-                        <h2 id="contact-title">Contact <span id="arr-Six" style="font-weight: bold;">-</span></h2>
-                    </a>
-                    <div id="collapseSix" class="collapse show" style="transition: all 0.6s ease 0s;">
-                        <div id="social-media" class="row text-center">
+                <div id="c5" class="card">
+                    <div id="contact-info" class="col">
+                        <a data-toggle="collapse" data-target="#collapseSix" href="#collapseSix" id="Six"
+                            onclick="changeArrow(this.id)">
+                            <h2 id="contact-title" class="card-header">Contact <span id="arr-Six"
+                                    style="font-weight: bold;">-</span></h2>
+                        </a>
+                        <div class="card-body"></div>
+                        <div id="collapseSix" class="collapse show" style="transition: all 0.6s ease 0s;">
+                            <div id="social-media" class="row text-center">
 
-                            <div id="social-media-fb" class="col-sm-3" style="background-color: #3B5998;">
-                                <!--Facebook-->
-                                <a class="btn-floating btn-lg btn-fb" type="button" role="button"
-                                    href="https://www.facebook.com/PatrickAli123" style="background-color: #3B5998;
+                                <div id="social-media-fb" class="col-sm-3" style="background-color: #3B5998;">
+                                    <!--Facebook-->
+                                    <a class="btn-floating btn-lg btn-fb" type="button" role="button"
+                                        href="https://www.facebook.com/PatrickAli123" style="background-color: #3B5998;
                                 display: inline-block;
                                 line-height: 37px;
                                 position: relative;
@@ -337,11 +374,11 @@
                                 border-radius: 20%;
                                 transition: .3s;
                                 /* margin: 10px;"><i class="fab fa-facebook-f" style="color: #fff"></i></a>
-                            </div>
-                            <div id="social-media-tw" class="col-sm-3" style="background-color: #55ACEE;">
-                                <!--Twitter-->
-                                <a class="btn-floating btn-lg btn-tw" type="button" role="button"
-                                    href="https://twitter.com/Patrick__Ali" style="background-color: #55ACEE;
+                                </div>
+                                <div id="social-media-tw" class="col-sm-3" style="background-color: #55ACEE;">
+                                    <!--Twitter-->
+                                    <a class="btn-floating btn-lg btn-tw" type="button" role="button"
+                                        href="https://twitter.com/Patrick__Ali" style="background-color: #55ACEE;
                                 display: inline-block;
                                 line-height: 37px;
                                 position: relative;
@@ -351,11 +388,11 @@
                                 border-radius: 20%;
                                 transition: .3s;
                                 /* margin: 10px;"><i class="fab fa-twitter" style="color: #fff"></i></a>
-                            </div>
-                            <div id="social-media-lk" class="col-sm-3" style="background-color: #0082CA;">
-                                <!--Linkedin-->
-                                <a class="btn-floating btn-lg btn-li" type="button" role="button"
-                                    href="https://www.linkedin.com/in/patrick-ali-b74296128/" style="background-color: #0082CA;
+                                </div>
+                                <div id="social-media-lk" class="col-sm-3" style="background-color: #0082CA;">
+                                    <!--Linkedin-->
+                                    <a class="btn-floating btn-lg btn-li" type="button" role="button"
+                                        href="https://www.linkedin.com/in/patrick-ali-b74296128/" style="background-color: #0082CA;
                                 display: inline-block;
                                 line-height: 37px;
                                 position: relative;
@@ -365,7 +402,7 @@
                                 border-radius: 20%;
                                 transition: .3s;
                                 /* margin: 10px;"><i class="fab fa-linkedin-in" style="color: #fff"></i></a>
-                                <!--Youtube
+                                    <!--Youtube
                                 <a class="btn-floating btn-lg btn-yt" type="button" role="button" style="background-color: #CD201F;
                                 display: inline-block;
                                 line-height: 37px;
@@ -376,11 +413,11 @@
                                 border-radius: 20%;
                                 transition: .3s;
                                 /* margin: 10px;"><i class="fab fa-youtube" style="color: #fff"></i></a>-->
-                            </div>
-                            <div id="social-media-gh" class="col-sm-3" style="background-color: #000;">
-                                <!--Github-->
-                                <a class="btn-floating btn-lg btn-git" type="button" role="button"
-                                    href="https://github.com/Patrick-Ali" style="background-color: #000;
+                                </div>
+                                <div id="social-media-gh" class="col-sm-3" style="background-color: #000;">
+                                    <!--Github-->
+                                    <a class="btn-floating btn-lg btn-git" type="button" role="button"
+                                        href="https://github.com/Patrick-Ali" style="background-color: #000;
                                 display: inline-block;
                                 line-height: 37px;
                                 position: relative;
@@ -390,7 +427,7 @@
                                 border-radius: 20%;
                                 transition: .3s;
                                 /* margin: 10px;"><i class="fab fa-github" style="color: #fff"></i></a>
-                                <!--Email
+                                    <!--Email
                                 <a class="btn-floating btn-lg btn-email" type="button" role="button" style="background-color: #4B515D;
                                 display: inline-block;
                                 line-height: 37px;
@@ -401,14 +438,16 @@
                                 border-radius: 20%;
                                 transition: .3s;
                                 /* margin: 10px;"><i class="fas fa-envelope" style="color: #fff"></i></a>-->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <h2 id="print-title" style='display: none;'>Print CV</h2>
             </div>
+
+            <h2 id="print-title" style='display: none;'>Print CV</h2>
         </div>
+    </div>
     </div>
     <div id="convert" class="content-footer">
         <button type="button" id="btn-export" onclick="exportHTML();" class="btn btn-primary btn-block"
@@ -435,6 +474,14 @@
     const acl_2 = document.getElementById("acl-2")
     const acl_3 = document.getElementById("acl-3")
     const skill_head = document.getElementById("Skills-Head")
+    const n0 = document.getElementById("n0")
+    const n1  = document.getElementById("n1")
+    const n2  = document.getElementById("n2")
+    const n3  = document.getElementById("n3")
+    const n4  = document.getElementById("n4")
+    const p = document.getElementById("projects-a")
+    const con = document.getElementById("contact-info-a")
+    const nav = document.getElementById("navbar")
     //console.log(titles[0].id)
     if (currentTheme == "dark") {
         //If dark mode is enabled add dark theme class to body
@@ -443,6 +490,14 @@
         acl_1.classList.toggle("dark-theme");
         acl_2.classList.toggle("dark-theme");
         acl_3.classList.toggle("dark-theme");
+        n0.classList.toggle("dark-theme");
+        n1.classList.toggle("dark-theme");
+        n2.classList.toggle("dark-theme");
+        n3.classList.toggle("dark-theme");
+        n4.classList.toggle("dark-theme");
+        p.classList.toggle("dark-theme");
+        con.classList.toggle("dark-theme");
+        nav.classList.toggle("dark-theme");
         for (var i = 0; i < titles.length; i++) {
             var title_id = titles[i].id;
             //console.log(title_id);
@@ -456,6 +511,14 @@
         acl_1.classList.toggle("light-theme");
         acl_2.classList.toggle("light-theme");
         acl_3.classList.toggle("light-theme");
+        n0.classList.toggle("light-theme");
+        n1.classList.toggle("light-theme");
+        n2.classList.toggle("light-theme");
+        n3.classList.toggle("light-theme");
+        n4.classList.toggle("light-theme");
+        p.classList.toggle("light-theme");
+        con.classList.toggle("light-theme");
+        nav.classList.toggle("light-theme");
         for (var i = 0; i < titles.length; i++) {
             document.getElementById(titles[i].id).classList.toggle("light-theme");
         }
@@ -463,33 +526,118 @@
 
     btn.addEventListener("click", function () {
         if (prefersDarkScheme.matches) {
-            //If current theme is dark change to light
-            document.body.classList.toggle("light-theme");
-            skill_head.classList.toggle("light-theme");
-            acl_1.classList.toggle("light-theme");
-            acl_2.classList.toggle("light-theme");
-            acl_3.classList.toggle("light-theme");
-            for (var i = 0; i < titles.length; i++) {
-                document.getElementById(titles[i].id).classList.toggle("light-theme");
+            //console.log(prefersDarkScheme)
+            console.log("Turn Light")
+            if(currentTheme == "light"){
+                document.body.classList.toggle("light-theme");
+                skill_head.classList.toggle("light-theme");
+                acl_1.classList.toggle("light-theme");
+                acl_2.classList.toggle("light-theme");
+                acl_3.classList.toggle("light-theme");
+                n0.classList.toggle("light-theme");
+                n1.classList.toggle("light-theme");
+                n2.classList.toggle("light-theme");
+                n3.classList.toggle("light-theme");
+                n4.classList.toggle("light-theme");
+                p.classList.toggle("light-theme");
+                con.classList.toggle("light-theme");
+                nav.classList.toggle("light-theme");
+                for (var i = 0; i < titles.length; i++) {
+                    document.getElementById(titles[i].id).classList.toggle("light-theme");
+                }
+                document.body.classList.toggle("dark-theme");
+                skill_head.classList.toggle("dark-theme");
+                acl_1.classList.toggle("dark-theme");
+                acl_2.classList.toggle("dark-theme");
+                acl_3.classList.toggle("dark-theme");
+                n0.classList.toggle("dark-theme");
+                n1.classList.toggle("dark-theme");
+                n2.classList.toggle("dark-theme");
+                n3.classList.toggle("dark-theme");
+                n4.classList.toggle("dark-theme");
+                p.classList.toggle("dark-theme");
+                con.classList.toggle("dark-theme");
+                nav.classList.toggle("dark-theme");
+                for (var i = 0; i < titles.length; i++) {
+                    document.getElementById(titles[i].id).classList.toggle("dark-theme");
+                }
+            }else{
+                //If current theme is dark change to light
+                document.body.classList.toggle("light-theme");
+                skill_head.classList.toggle("light-theme");
+                acl_1.classList.toggle("light-theme");
+                acl_2.classList.toggle("light-theme");
+                acl_3.classList.toggle("light-theme");
+                n0.classList.toggle("light-theme");
+                n1.classList.toggle("light-theme");
+                n2.classList.toggle("light-theme");
+                n3.classList.toggle("light-theme");
+                n4.classList.toggle("light-theme");
+                p.classList.toggle("light-theme");
+                con.classList.toggle("light-theme");
+                nav.classList.toggle("light-theme");
+                for (var i = 0; i < titles.length; i++) {
+                    document.getElementById(titles[i].id).classList.toggle("light-theme");
+                }
             }
             //Update theme to refelect current selection
             var theme = document.body.classList.contains("light-theme") ? "light" : "dark";
+            //console.log(theme)
+            //if(theme=="light"){
+                //prefersDarkScheme.matches = false;
+            //}
         } else {
+            console.log("Turn Dark")
             document.body.classList.toggle("dark-theme");
             skill_head.classList.toggle("dark-theme");
             acl_1.classList.toggle("dark-theme");
             acl_2.classList.toggle("dark-theme");
             acl_3.classList.toggle("dark-theme");
+            n0.classList.toggle("dark-theme");
+            n1.classList.toggle("dark-theme");
+            n2.classList.toggle("dark-theme");
+            n3.classList.toggle("dark-theme");
+            n4.classList.toggle("dark-theme");
+            p.classList.toggle("dark-theme");
+            con.classList.toggle("dark-theme");
+            nav.classList.toggle("dark-theme");
             for (var i = 0; i < titles.length; i++) {
                 document.getElementById(titles[i].id).classList.toggle("dark-theme");
             }
             var theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
+            //if(theme=="dark"){
+                //prefersDarkScheme.matches = true;
+            //}
         }
         //Save selection to local storage
         localStorage.setItem("theme", theme);
     });
 
-
+    $(function () {
+        $(window).on('scroll', function () {
+            var temp = localStorage.getItem("theme")
+            //console.log(temp)
+            if(temp == "dark"){
+                //console.log("Dark")
+                if ( $(window).scrollTop() > 10 ) {
+                    $('.navbar').removeClass('dark-theme');
+                    $('.navbar').addClass('active-dark-theme');
+                } else {
+                    $('.navbar').removeClass('active-dark-theme');
+                    $('.navbar').addClass('dark-theme');
+                }
+            }else{
+                console.log("Light")
+                if ( $(window).scrollTop() > 10 ) {
+                    $('.navbar').removeClass('light-theme');
+                    $('.navbar').addClass('active-light-theme');
+                } else {
+                    $('.navbar').removeClass('active-light-theme');
+                    $('.navbar').addClass('light-theme');
+                } 
+            }
+        });
+    });
 
     //https://stackoverflow.com/questions/9038625/detect-if-device-is-ios
     function iOS() {
