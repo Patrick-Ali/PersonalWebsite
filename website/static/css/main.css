@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   --text-color: #222;
   --bkg-color: #fff;
@@ -6,86 +10,153 @@ body {
   position: relative !important;
   list-style: none;
 }
+
 body.dark-theme {
   --text-color: #eee;
   --bkg-color: #2a2a2a;
 }
 
-h2.dark-theme{
+#b1.hm-dark-theme,
+#b2.hm-dark-theme,
+#b3.hm-dark-theme {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  margin-top: 0;
+}
+
+h2.dark-theme {
   background-color: #3d3d3d;
 }
 
-#Skills-Head.dark-theme{
+#Skills-Head.dark-theme {
   background-color: #362222;
 }
 
-#acl-1.dark-theme, #acl-2.dark-theme, #acl-3.dark-theme{
+#acl-1.dark-theme,
+#acl-2.dark-theme,
+#acl-3.dark-theme {
   background-color: #423F3E;
 }
 
-.navbar {
+.navbar,
+#theme {
   transition: all 0.4s;
 }
 
-#navbar.dark-theme{
+#navbar.dark-theme,
+#theme.dark-theme {
   background-color: #2a2a2a;
 }
 
-#n0.dark-theme, #n1.dark-theme, #n2.dark-theme, #n3.dark-theme, #n4.dark-theme, 
-#projects-a.dark-theme, #contact-info-a.dark-theme{
-  color: #eee!important;
+#n0.dark-theme,
+#n1.dark-theme,
+#n2.dark-theme,
+#n3.dark-theme,
+#n4.dark-theme,
+#projects-a.dark-theme,
+#contact-info-a.dark-theme {
+  color: #eee !important;
 }
 
-#navbar.active-light-theme{
-  background-color: lightgrey!important;
+#navbar.active-light-theme,
+#theme.active-light-theme {
+  background-color: lightgrey !important;
 }
 
-#navbar.active-dark-theme{
+#navbar.active-dark-theme,
+#theme.active-dark-theme {
   background-color: #423F3E;
 }
 
 @media (prefers-color-scheme: dark) {
+
   /* defaults to dark theme */
   body {
     --text-color: #eee;
-    --bkg-color: #2a2a2a/*#121212;*/
+    --bkg-color: #2a2a2a
+      /*#121212;*/
   }
-  #acl-1.dark-theme, #acl-2.dark-theme, #acl-3.dark-theme{
+
+  #acl-1.dark-theme,
+  #acl-2.dark-theme,
+  #acl-3.dark-theme {
     background-color: #423F3E;
-  } 
-  h2{
+  }
+
+  h2 {
     background-color: #3d3d3d;
   }
-  #navbar.dark-theme{
+
+  #navbar.dark-theme,
+  #theme.dark-theme {
     background-color: #2a2a2a;
   }
 
-  #n0.dark-theme, #n1.dark-theme, #n2.dark-theme, #n3.dark-theme, #n4.dark-theme, 
-  #projects-a.dark-theme, #contact-info-a.dark-theme{
-    color: #eee!important;
+  #n0.dark-theme,
+  #n1.dark-theme,
+  #n2.dark-theme,
+  #n3.dark-theme,
+  #n4.dark-theme,
+  #projects-a.dark-theme,
+  #contact-info-a.dark-theme {
+    color: #eee !important;
   }
 
-  #navbar.light-theme{
+  #navbar.light-theme,
+  #theme.light-theme {
     background-color: #fff;
   }
 
-  #n0.light-theme, #n1.light-theme, #n2.light-theme, #n3.light-theme, #n4.light-theme, 
-  #projects-a.light-theme, #contact-info-a.light-theme{
-    color: #222!important;
+  #n0.light-theme,
+  #n1.light-theme,
+  #n2.light-theme,
+  #n3.light-theme,
+  #n4.light-theme,
+  #projects-a.light-theme,
+  #contact-info-a.light-theme {
+    color: #222 !important;
   }
 
-  #Skills-Head.dark-theme{
+  #b1.hm-dark-theme,
+  #b2.hm-dark-theme,
+  #b3.hm-dark-theme {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    margin-top: 0;
+  }
+
+  #b1.hm-light-theme,
+  #b2.hm-light-theme,
+  #b3.hm-light-theme {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+    margin-top: 0;
+  }
+
+  #Skills-Head.dark-theme {
     background-color: #362222;
   }
-  #Skills-Head.light-theme{
+
+  #Skills-Head.light-theme {
     background-color: darkgray;
   }
-  h2.light-theme{
+
+  h2.light-theme {
     background-color: #fff;
   }
-  #acl-1.light-theme, #acl-2.light-theme, #acl-3.light-theme{
+
+  #acl-1.light-theme,
+  #acl-2.light-theme,
+  #acl-3.light-theme {
     background-color: lightgrey;
   }
+
   body.light-theme {
     --text-color: #222;
     --bkg-color: #fff;
@@ -100,16 +171,21 @@ body {
   background: var(--bkg-color);
 }
 
-h1, h2,
+h1,
+h2,
 p {
   color: var(--text-color);
-} 
+}
 
-#c1, #c2, #c3, #c4, #c5{
+#c1,
+#c2,
+#c3,
+#c4,
+#c5 {
   background-color: var(--bkg-color);
   color: var(--text-color);
 }
-  
+
 
 /*body {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
@@ -120,37 +196,42 @@ p {
 
 a,
 a:hover {
-    text-decoration: none !important;
-    color: black !important;
+  text-decoration: none !important;
+  color: black !important;
 }
 
 .test {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .test1 {
-    padding-top: 50px;  
+  padding-top: 50px;
 }
 
 p {
-    text-align: justify;
+  text-align: justify;
 }
 
 .rem {
-    color: white;
+  color: white;
 }
 
-.skill-head{
-    background-color: darkgray;
+.skill-head {
+  background-color: darkgray;
 }
 
+@media screen and (min-width:1500px) {
+  #page-body {
+    padding-top: 2rem !important
+  }
+}
 
+@media screen and (min-height:900px) {
+  #page-body {
+    padding-top: 2rem !important
+  }
 
-@media screen and (min-height:900px){
-    #page-body {
-        padding-top:2rem!important
-    }
-    #convert{
-        top:100px;
-    }
+  #convert {
+    top: 100px;
+  }
 }

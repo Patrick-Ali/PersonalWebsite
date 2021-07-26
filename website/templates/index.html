@@ -27,6 +27,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
 </head>
 
 
@@ -45,35 +46,38 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="1000">
 
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-xl fixed-top">
         <a id="n0" class="navbar-brand" href="/">Patrick Ali</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"><div id="b1"></div><div id="b2"></div><div id="b3"></div></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <li class="navbar-nav">
-            <li class="nav-item">
-                <a id="n1" class="nav-link" href="#introduction">Introduction</a>
-            </li>
-            <li class="nav-item">
-                <a id="n2" class="nav-link" href="#education">Education</a>
-            </li>
-            <li class="nav-item">
-                <a id="n3" class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a id="n4" class="nav-link" href="#work-exp">Work Experience</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="projects-a" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="contact-info-a" href="#contact-info">Contact Information</a>
-            </li>
-            <li class="nav-item">
-                <button class="btn-toggle"><img src="{{ url_for('static', filename='moon-6692.png') }}"></button>
-            </li>
-            </li>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a id="n1" class="nav-link" href="#introduction">Introduction</a>
+                </li>
+                <li class="nav-item">
+                    <a id="n2" class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a id="n3" class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a id="n4" class="nav-link" href="#work-exp">Work Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="projects-a" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-info-a" href="#contact-info">Contact Information</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li id="theme"class="nav-item btn-toggle">
+                    <img src="{{ url_for('static', filename='theme.svg') }}" width="48px"
+                        height="48px">
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -470,18 +474,22 @@
     //Get the current theme from local storage
     const currentTheme = localStorage.getItem("theme");
     const titles = document.getElementsByTagName("h2");
-    const acl_1 = document.getElementById("acl-1")
-    const acl_2 = document.getElementById("acl-2")
-    const acl_3 = document.getElementById("acl-3")
-    const skill_head = document.getElementById("Skills-Head")
-    const n0 = document.getElementById("n0")
-    const n1  = document.getElementById("n1")
-    const n2  = document.getElementById("n2")
-    const n3  = document.getElementById("n3")
-    const n4  = document.getElementById("n4")
-    const p = document.getElementById("projects-a")
-    const con = document.getElementById("contact-info-a")
-    const nav = document.getElementById("navbar")
+    const acl_1 = document.getElementById("acl-1");
+    const acl_2 = document.getElementById("acl-2");
+    const acl_3 = document.getElementById("acl-3");
+    const skill_head = document.getElementById("Skills-Head");
+    const n0 = document.getElementById("n0");
+    const n1 = document.getElementById("n1");
+    const n2 = document.getElementById("n2");
+    const n3 = document.getElementById("n3");
+    const n4 = document.getElementById("n4");
+    const p = document.getElementById("projects-a");
+    const con = document.getElementById("contact-info-a");
+    const nav = document.getElementById("navbar");
+    const theme_picker = document.getElementById("theme");
+    const b1 = document.getElementById("b1");
+    const b2 = document.getElementById("b2");
+    const b3 = document.getElementById("b3");
     //console.log(titles[0].id)
     if (currentTheme == "dark") {
         //If dark mode is enabled add dark theme class to body
@@ -498,6 +506,10 @@
         p.classList.toggle("dark-theme");
         con.classList.toggle("dark-theme");
         nav.classList.toggle("dark-theme");
+        theme_picker.classList.toggle("dark-theme");
+        b1.classList.toggle("hm-dark-theme");
+        b2.classList.toggle("hm-dark-theme");
+        b3.classList.toggle("hm-dark-theme");
         for (var i = 0; i < titles.length; i++) {
             var title_id = titles[i].id;
             //console.log(title_id);
@@ -519,6 +531,10 @@
         p.classList.toggle("light-theme");
         con.classList.toggle("light-theme");
         nav.classList.toggle("light-theme");
+        theme_picker.classList.toggle("light-theme");
+        b1.classList.toggle("hm-light-theme");
+        b2.classList.toggle("hm-light-theme");
+        b3.classList.toggle("hm-light-theme");
         for (var i = 0; i < titles.length; i++) {
             document.getElementById(titles[i].id).classList.toggle("light-theme");
         }
@@ -528,7 +544,7 @@
         if (prefersDarkScheme.matches) {
             //console.log(prefersDarkScheme)
             console.log("Turn Light")
-            if(currentTheme == "light"){
+            if (currentTheme == "light") {
                 document.body.classList.toggle("light-theme");
                 skill_head.classList.toggle("light-theme");
                 acl_1.classList.toggle("light-theme");
@@ -542,6 +558,10 @@
                 p.classList.toggle("light-theme");
                 con.classList.toggle("light-theme");
                 nav.classList.toggle("light-theme");
+                theme_picker.classList.toggle("light-theme");
+                b1.classList.toggle("hm-light-theme");
+                b2.classList.toggle("hm-light-theme");
+                b3.classList.toggle("hm-light-theme");
                 for (var i = 0; i < titles.length; i++) {
                     document.getElementById(titles[i].id).classList.toggle("light-theme");
                 }
@@ -558,10 +578,14 @@
                 p.classList.toggle("dark-theme");
                 con.classList.toggle("dark-theme");
                 nav.classList.toggle("dark-theme");
+                theme_picker.classList.toggle("dark-theme");
+                b1.classList.toggle("hm-dark-theme");
+                b2.classList.toggle("hm-dark-theme");
+                b3.classList.toggle("hm-dark-theme");
                 for (var i = 0; i < titles.length; i++) {
                     document.getElementById(titles[i].id).classList.toggle("dark-theme");
                 }
-            }else{
+            } else {
                 //If current theme is dark change to light
                 document.body.classList.toggle("light-theme");
                 skill_head.classList.toggle("light-theme");
@@ -576,6 +600,10 @@
                 p.classList.toggle("light-theme");
                 con.classList.toggle("light-theme");
                 nav.classList.toggle("light-theme");
+                theme_picker.classList.toggle("light-theme");
+                b1.classList.toggle("hm-light-theme");
+                b2.classList.toggle("hm-light-theme");
+                b3.classList.toggle("hm-light-theme");
                 for (var i = 0; i < titles.length; i++) {
                     document.getElementById(titles[i].id).classList.toggle("light-theme");
                 }
@@ -584,7 +612,7 @@
             var theme = document.body.classList.contains("light-theme") ? "light" : "dark";
             //console.log(theme)
             //if(theme=="light"){
-                //prefersDarkScheme.matches = false;
+            //prefersDarkScheme.matches = false;
             //}
         } else {
             console.log("Turn Dark")
@@ -606,7 +634,7 @@
             }
             var theme = document.body.classList.contains("dark-theme") ? "dark" : "light";
             //if(theme=="dark"){
-                //prefersDarkScheme.matches = true;
+            //prefersDarkScheme.matches = true;
             //}
         }
         //Save selection to local storage
@@ -617,24 +645,32 @@
         $(window).on('scroll', function () {
             var temp = localStorage.getItem("theme")
             //console.log(temp)
-            if(temp == "dark"){
+            if (temp == "dark") {
                 //console.log("Dark")
-                if ( $(window).scrollTop() > 10 ) {
-                    $('.navbar').removeClass('dark-theme');
-                    $('.navbar').addClass('active-dark-theme');
+                if ($(window).scrollTop() > 10) {
+                    $('#navbar').removeClass('dark-theme');
+                    $('#navbar').addClass('active-dark-theme');
+                    $('#theme').removeClass('dark-theme');
+                    $('#theme').addClass('active-dark-theme');
                 } else {
-                    $('.navbar').removeClass('active-dark-theme');
-                    $('.navbar').addClass('dark-theme');
+                    $('#navbar').removeClass('active-dark-theme');
+                    $('#navbar').addClass('dark-theme');
+                    $('#theme').removeClass('active-dark-theme');
+                    $('#theme').addClass('dark-theme');
                 }
-            }else{
+            } else {
                 console.log("Light")
-                if ( $(window).scrollTop() > 10 ) {
-                    $('.navbar').removeClass('light-theme');
-                    $('.navbar').addClass('active-light-theme');
+                if ($(window).scrollTop() > 10) {
+                    $('#navbar').removeClass('light-theme');
+                    $('#navbar').addClass('active-light-theme');
+                    $('#theme').removeClass('light-theme');
+                    $('#theme').addClass('active-light-theme');
                 } else {
-                    $('.navbar').removeClass('active-light-theme');
-                    $('.navbar').addClass('light-theme');
-                } 
+                    $('#navbar').removeClass('active-light-theme');
+                    $('#navbar').addClass('light-theme');
+                    $('#theme').removeClass('active-light-theme');
+                    $('#theme').addClass('light-theme');
+                }
             }
         });
     });
