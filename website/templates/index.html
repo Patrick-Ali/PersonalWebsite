@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -23,6 +25,13 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 
+    <!-- Bootstrap CSS Offline
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-4.6.0-dist/css/bootstrap.min.css') }}"> -->
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) Offline
+    <script src="{{ url_for('static', filename='js/jquery-3.5.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='css/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js') }}"></script> -->
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -36,6 +45,8 @@
     integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
     crossorigin="anonymous"></script>
 
+<!--jsPDF Offline
+<script src="{{ url_for('static', filename='js/jspdf_1_5_3.js') }}"></script>-->
 
 
 <meta charset="UTF-8">
@@ -49,7 +60,11 @@
     <nav id="navbar" class="navbar navbar-expand-xl fixed-top">
         <a id="n0" class="navbar-brand" href="/">Patrick Ali</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"><div id="b1"></div><div id="b2"></div><div id="b3"></div></span>
+            <span class="navbar-toggler-icon">
+                <div id="b1"></div>
+                <div id="b2"></div>
+                <div id="b3"></div>
+            </span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav mr-auto">
@@ -73,9 +88,8 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li id="theme"class="nav-item btn-toggle">
-                    <img src="{{ url_for('static', filename='theme.svg') }}" width="48px"
-                        height="48px">
+                <li id="theme" class="nav-item btn-toggle">
+                    <img src="{{ url_for('static', filename='theme.svg') }}" alt="Set page colour scheme" width="48px" height="48px">
                 </li>
             </ul>
         </div>
@@ -472,7 +486,7 @@
     //Determine if the system is set to dark mode
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
     //Get the current theme from local storage
-    const currentTheme = localStorage.getItem("theme");
+    var currentTheme = localStorage.getItem("theme");
     const titles = document.getElementsByTagName("h2");
     const acl_1 = document.getElementById("acl-1");
     const acl_2 = document.getElementById("acl-2");
@@ -490,6 +504,9 @@
     const b1 = document.getElementById("b1");
     const b2 = document.getElementById("b2");
     const b3 = document.getElementById("b3");
+    if (currentTheme == null) {
+                currentTheme = "dark"
+    }
     //console.log(titles[0].id)
     if (currentTheme == "dark") {
         //If dark mode is enabled add dark theme class to body
@@ -544,7 +561,12 @@
         if (prefersDarkScheme.matches) {
             //console.log(prefersDarkScheme)
             console.log("Turn Light")
+            console.log(currentTheme)
+            if (currentTheme == null) {
+                currentTheme = "dark"
+            }
             if (currentTheme == "light") {
+                console.log("Turning Dark")
                 document.body.classList.toggle("light-theme");
                 skill_head.classList.toggle("light-theme");
                 acl_1.classList.toggle("light-theme");
